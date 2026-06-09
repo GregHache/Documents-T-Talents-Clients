@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrée Express vs Immigration Québec : Les Différences Clés</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Définition des variables CSS pour les couleurs */
+        :root {
+            --main-red: #C60019;
+            --dark-red: #A00013;
+            --dark-gray: #212529;
+            --accent-green: #28A745;
+            --white: #FFFFFF;
+            --light-gray-bg: #F8F9FA;
+            --very-light-gray-border: #E0E0E0;
+            --footer-gray: #F0F0F0;
+        }
+
+        /* Styles généraux pour le corps du document */
+        body {
+            font-family: 'Open Sans', sans-serif; /* Police principale pour le texte */
+            color: var(--dark-gray); /* Couleur du texte principal */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white); /* Fond clair */
+        }
+
+        /* Styles de l'en-tête de la page */
+        header {
+            background-color: var(--main-red); /* Rouge principal */
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif; /* Police pour les titres */
+            margin: 0;
+            font-size: 2.5em; /* Taille du titre principal */
+        }
+
+        /* Conteneur du logo */
+        .logo-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-container img {
+            max-width: 200px; /* Taille maximale du logo */
+            height: auto;
+        }
+
+        /* Conteneur principal pour le contenu */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Styles des titres de section et sous-sections */
+        h2, h3 {
+            font-family: 'Montserrat', sans-serif; /* Police pour les titres et sous-titres */
+            color: var(--main-red); /* Rouge principal */
+            border-bottom: 2px solid var(--very-light-gray-border); /* Bordure sous les titres */
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* Styles des sections de contenu */
+        section {
+            background-color: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
+        }
+
+        /* Style pour les sections avec un fond gris clair */
+        .section-light-bg {
+            background-color: var(--light-gray-bg);
+        }
+
+        /* Styles des cartes d'information */
+        .card {
+            background-color: var(--white);
+            border: 1px solid var(--very-light-gray-border); /* Bordure gris très clair */
+            border-radius: 8px; /* Coins arrondis */
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Ombre légère */
+            transition: all 0.3s ease; /* Transition pour les effets de survol */
+        }
+
+        /* Effet d'ombre et soulèvement sur les cartes au survol */
+        .card:hover {
+            transform: translateY(-5px); /* Léger mouvement vertical */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+        }
+
+        /* Styles pour les listes non ordonnées */
+        ul {
+            list-style-type: none; /* Supprime les puces par défaut */
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px; /* Espace pour la puce personnalisée */
+        }
+
+        /* Puces personnalisées pour les listes */
+        ul li::before {
+            content: '•'; /* Caractère de puce */
+            color: var(--main-red); /* Couleur de la puce */
+            position: absolute;
+            left: 0;
+        }
+
+        /* Styles pour les tableaux */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden; /* Assure que les coins arrondis sont appliqués */
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--very-light-gray-border);
+        }
+
+        th {
+            background-color: var(--main-red); /* Fond rouge pour les en-têtes de tableau */
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Alternance des couleurs de ligne pour les tableaux */
+        tr:nth-child(even) {
+            background-color: var(--light-gray-bg);
+        }
+
+        /* Styles pour les boutons d'action */
+        .button {
+            display: inline-block;
+            background-color: var(--main-red);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px; /* Coins légèrement arrondis */
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.3s ease; /* Transition pour les effets de flottement */
+        }
+
+        /* Effet de flottement sur les boutons au survol */
+        .button:hover {
+            background-color: var(--dark-red); /* Rouge foncé au survol */
+            transform: translateY(-3px); /* Léger mouvement vertical */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+        }
+
+        /* Styles pour le bloc d'avertissement */
+        .disclaimer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--footer-gray); /* Fond gris footer */
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Styles pour la section des sources */
+        .sources {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--footer-gray);
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .sources h3 {
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--very-light-gray-border);
+            padding-bottom: 5px;
+        }
+
+        .sources ul {
+            list-style-type: decimal; /* Liste numérotée */
+            padding-left: 20px;
+        }
+
+        .sources ul li a {
+            color: var(--main-red); /* Couleur des liens */
+            text-decoration: none;
+        }
+
+        .sources ul li a:hover {
+            text-decoration: underline; /* Souligne le lien au survol */
+        }
+
+        /* Styles du pied de page */
+        footer {
+            background-color: var(--footer-gray);
+            color: #555;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- Logo Temporis Talents -->
+        <img src="https://i.imgur.com/MuXNsBR.png" alt="Temporis Talents Logo">
+    </div>
+    <header>
+        <h1>Entrée Express vs Immigration Québec : Les Différences Clés pour la Résidence Permanente au Canada</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <p>Pour les candidats français souhaitant immigrer au Canada, deux voies principales s'offrent selon leur destination : le système Entrée Express pour toutes les provinces canadiennes (sauf le Québec) ou les programmes d'immigration québécois spécifiques.</p>
+            <p>Ces deux processus présentent des différences fondamentales dans leur structure, leurs coûts, leurs délais et leurs exigences.</p>
+        </section>
+
+        <section class="section-light-bg">
+            <h2>1. Structure et Portée Géographique</h2>
+            <div class="card">
+                <h3>Entrée Express : Un système fédéral unifié</h3>
+                <ul>
+                    <li>Entrée Express est un système électronique fédéral qui gère les demandes de résidence permanente pour toutes les provinces canadiennes à l'exception du Québec.</li>
+                    <li>Il regroupe trois programmes fédéraux d'immigration économique : le Programme des travailleurs qualifiés (fédéral), la Catégorie de l'expérience canadienne et le Programme des travailleurs de métiers spécialisés.</li>
+                    <li>Le système utilise un Système de classement global (SCG) basé sur des points attribués selon l'âge, l'éducation, l'expérience professionnelle et les compétences linguistiques.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Un processus provincial en deux étapes</h3>
+                <ul>
+                    <li>L'immigration au Québec suit obligatoirement un processus en deux phases distinctes.</li>
+                    <li>Les candidats doivent d'abord obtenir un Certificat de sélection du Québec (CSQ) auprès du MIFI, puis présenter une demande de résidence permanente auprès d'IRCC.</li>
+                    <li>Le Québec utilise principalement le Programme de sélection des travailleurs qualifiés (PSTQ), qui a remplacé l'ancien PRTQ depuis novembre 2024.</li>
+                    <li>Le Programme de l'expérience québécoise (PEQ) est destiné aux personnes ayant récemment étudié ou travaillé au Québec et est actuellement suspendu jusqu'au 30 novembre 2025.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Délais de Traitement</h2>
+            <div class="card">
+                <h3>Entrée Express : Rapidité optimisée</h3>
+                <ul>
+                    <li>Le système Entrée Express offre des délais de traitement considérablement réduits avec un objectif de 6 mois pour la plupart des demandes une fois l'invitation reçue.</li>
+                    <li>Dans la pratique, de nombreux candidats obtiennent leur réponse en 4 mois.</li>
+                    <li>Cette rapidité constitue l'un des principaux avantages du système fédéral.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Processus plus long</h3>
+                <ul>
+                    <li>Les délais pour l'immigration au Québec sont généralement plus longs en raison du processus en deux étapes.</li>
+                    <li>Le délai affiché est de 9 mois pour les travailleurs qualifiés sélectionnés par le Québec, bien que dans la pratique, les délais réels se situent entre 4 et 6 mois.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-light-bg">
+            <h2>3. Structure des Coûts</h2>
+            <div class="card">
+                <h3>Entrée Express : Coûts fédéraux uniques</h3>
+                <ul>
+                    <li>Les frais pour Entrée Express sont relativement simples.</li>
+                    <li>Ils s'élèvent à 1 525 $ CAD par adulte et 260 $ CAD par enfant à charge.</li>
+                    <li>Ces frais couvrent l'ensemble du processus fédéral en une seule étape.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Coûts à deux niveaux</h3>
+                <ul>
+                    <li>L'immigration au Québec implique des coûts plus élevés en raison du processus en deux phases.</li>
+                    <li><strong>Étape provinciale (CSQ) :</strong></li>
+                    <ul>
+                        <li>Requérant principal : 844-869 $ CAD</li>
+                        <li>Conjoint : 181-186 $ CAD</li>
+                        <li>Enfant à charge : 181 $ CAD</li>
+                    </ul>
+                    <li><strong>Étape fédérale (résidence permanente) :</strong></li>
+                    <ul>
+                        <li>Traitement : 850 $ CAD par adulte</li>
+                        <li>Résidence permanente : 515 $ CAD par adulte</li>
+                        <li>Enfant : 230 $ CAD</li>
+                    </ul>
+                    <li>Le coût total pour une personne seule peut donc atteindre 7 000 à 8 000 $ CAD.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Exigences Linguistiques</h2>
+            <div class="card">
+                <h3>Entrée Express : Flexibilité linguistique</h3>
+                <ul>
+                    <li>Le système Entrée Express accepte les compétences en anglais et/ou français, offrant une flexibilité linguistique importante.</li>
+                    <li>Les candidats francophones bénéficient même d'un avantage avec un objectif gouvernemental de 8,5 % d'admissions francophones d'ici décembre 2025.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Français obligatoire</h3>
+                <ul>
+                    <li>Le Québec impose des exigences linguistiques en français particulièrement rigoureuses.</li>
+                    <li>Les candidats doivent généralement démontrer un niveau 7 à l'oral sur l'Échelle québécoise pour le PEQ et un niveau 5 à l'écrit pour certains programmes.</li>
+                    <li>La maîtrise du français est pratiquement obligatoire pour tous les programmes québécois.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-light-bg">
+            <h2>5. Processus de Sélection</h2>
+            <div class="card">
+                <h3>Entrée Express : Système de points automatisé</h3>
+                <ul>
+                    <li>Entrée Express fonctionne selon un système de classement automatisé où les candidats créent un profil en ligne et reçoivent un score SCG.</li>
+                    <li>Environ toutes les deux semaines, IRCC invite les candidats les mieux classés à présenter une demande de résidence permanente.</li>
+                    <li>Le processus est transparent et prévisible.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Sélection ciblée par déclaration d'intérêt</h3>
+                <ul>
+                    <li>Le Québec utilise un système de déclaration d'intérêt via la plateforme Arrima.</li>
+                    <li>Les candidats soumettent leur profil, et les autorités québécoises invitent sélectivement les candidats répondant le mieux aux besoins du marché du travail québécois.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Évolutions Récentes en 2025</h2>
+            <div class="card">
+                <h3>Entrée Express : Expansion et nouvelles priorités</h3>
+                <ul>
+                    <li>En 2025, le programme Entrée Express offre 124 590 places, soit une augmentation de 12,5 % par rapport à 2024.</li>
+                    <li>Le système a également supprimé les points supplémentaires pour les offres d'emploi à partir du printemps 2025 pour lutter contre la fraude.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Immigration Québécoise : Période de transition</h3>
+                <ul>
+                    <li>Le Québec traverse une période de transition importante avec la suspension temporaire du PEQ jusqu'au 30 novembre 2025.</li>
+                    <li>Le nouveau PSTQ reprendra graduellement les invitations à partir de juillet 2025, ciblant d'abord les personnes déjà établies au Québec.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-light-bg">
+            <h2>Tableau Comparatif Synthétique</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Entrée Express</th>
+                        <th>Immigration Québec</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portée géographique</td>
+                        <td>Toutes provinces sauf Québec</td>
+                        <td>Québec uniquement</td>
+                    </tr>
+                    <tr>
+                        <td>Structure du processus</td>
+                        <td>1 étape (fédéral)</td>
+                        <td>2 étapes (provincial + fédéral)</td>
+                    </tr>
+                    <tr>
+                        <td>Délai de traitement</td>
+                        <td>6 mois (4 mois en pratique)</td>
+                        <td>9 mois affiché (4-6 mois en pratique)</td>
+                    </tr>
+                    <tr>
+                        <td>Coût approximatif (personne seule)</td>
+                        <td>2 300 $ CAD</td>
+                        <td>7 000-8 000 $ CAD</td>
+                    </tr>
+                    <tr>
+                        <td>Langues acceptées</td>
+                        <td>Anglais et/ou français</td>
+                        <td>Français obligatoire</td>
+                    </tr>
+                    <tr>
+                        <td>Système de sélection</td>
+                        <td>Points SCG automatisé</td>
+                        <td>Déclaration d'intérêt ciblée</td>
+                    </tr>
+                    <tr>
+                        <td>Places disponibles 2025</td>
+                        <td>124 590 places</td>
+                        <td>Variable selon programmes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Recommandations pour les Candidats Français</h2>
+            <p>Pour les candidats français, le choix dépend principalement de leurs objectifs géographiques et de leurs compétences linguistiques.</p>
+            <ul>
+                <li>Si l'objectif est de s'établir spécifiquement au Québec, les programmes québécois restent la seule option viable malgré leur complexité et leurs coûts plus élevés.</li>
+                <li>Pour une installation dans d'autres provinces canadiennes, Entrée Express offre un parcours plus direct, plus rapide et plus économique.</li>
+                <li>Les candidats maîtrisant uniquement le français trouveront des avantages dans les deux systèmes : priorité francophone croissante dans Entrée Express et prédominance naturelle du français dans les programmes québécois.</li>
+                <li>Cependant, la flexibilité linguistique d'Entrée Express peut constituer un atout supplémentaire pour les candidats bilingues.</li>
+                <li>Il est crucial de noter que 2025 marque une période de transition importante avec la réouverture du PSTQ en juillet et l'augmentation des places Entrée Express à 124 590, créant de nouvelles opportunités dans les deux systèmes.</li>
+            </ul>
+        </section>
+
+        <div class="disclaimer">
+            <p><strong>Avertissement :</strong> Cette page est fournie à titre informatif uniquement et ne constitue pas un avis juridique. Les informations sur les programmes d'immigration peuvent changer. Il est impératif de toujours vérifier les exigences et les procédures sur les sites officiels du gouvernement du Canada et du Québec avant de prendre toute décision concernant votre immigration.</p>
+        </div>
+
+        <div class="sources">
+            <h3>Sources :</h3>
+            <ul>
+                <li> <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/immigrer-canada/entree-express.html" target="_blank">https://www.canada.ca/fr/immigration-refugies-citoyennete/services/immigrer-canada/entree-express.html</a></li>
+                <li> <a href="https://www.canadavisa.com/fr/express-entry.html" target="_blank">https://www.canadavisa.com/fr/express-entry.html</a></li>
+                <li> <a href="https://www.canadim.com/fr/immigrer/quebec/csq/" target="_blank">https://www.canadim.com/fr/immigrer/quebec/csq/</a></li>
+                <li> <a href="https://www.soshubcanada.com/post/excellente-nouvelle-le-pstq-rouvrira-dès-juillet-2025-préparez-vous-dès-maintenant" target="_blank">https://www.soshubcanada.com/post/excellente-nouvelle-le-pstq-rouvrira-dès-juillet-2025-préparez-vous-dès-maintenant</a></li>
+                <li> <a href="https://immetis.com/entree-express-immigrer-canada-six-mois/" target="_blank">https://immetis.com/entree-express-immigrer-canada-six-mois/</a></li>
+                <li> <a href="https://www.youtube.com/watch?v=DeouyxsP9eo" target="_blank">https://www.youtube.com/watch?v=DeouyxsP9eo</a></li>
+                <li> <a href="https://immigration.ca/fr/processing-times-for-quebec-skilled-worker-applications/" target="_blank">https://immigration.ca/fr/processing-times-for-quebec-skilled-worker-applications/</a></li>
+                <li> <a href="https://pvtistes.net/augmentation-frais-residence-permanente-canada/" target="_blank">https://pvtistes.net/augmentation-frais-residence-permanente-canada/</a></li>
+                <li> <a href="https://askaia.ca/fr/blogue/entree-express-2025-objectifs-augmentes-et-priorites-sectorielle" target="_blank">https://askaia.ca/fr/blogue/entree-express-2025-objectifs-augmentes-et-priorites-sectorielle</a></li>
+                <li> <a href="https://prepmontcfca.com/arrima-ou-entree-express-quel-programme-choisir/" target="_blank">https://prepmontcfca.com/arrima-ou-entree-express-quel-programme-choisir/</a></li>
+                <li> <a href="https://www.soshubcanada.com/post/2025-nouvelles-mesures-apportées-au-système-entrée-express" target="_blank">https://www.soshubcanada.com/post/2025-nouvelles-mesures-apportées-au-système-entrée-express</a></li>
+                <li> <a href="https://www.ulaval.ca/international/immigration/demeurer-au-canada-apres-vos-etudes/setablir-de-facon-permanente-au-quebec" target="_blank">https://www.ulaval.ca/international/immigration/demeurer-au-canada-apres-vos-etudes/setablir-de-facon-permanente-au-quebec</a></li>
+                <li> <a href="https://www.quebec.ca/nouvelles/actualites/details/depot-plan-immigration-2025-mesures-temporaires-controler-croissance-immigration-permanente-59230" target="_blank">https://www.quebec.ca/nouvelles/actualites/details/depot-plan-immigration-2025-mesures-temporaires-controler-croissance-immigration-permanente-59230</a></li>
+                <li> <a href="https://pvtistes.net/dossiers/rp-entree-express/11/" target="_blank">https://pvtistes.net/dossiers/rp-entree-express/11/</a></li>
+                <li> <a href="https://immigration.ca/fr/le-systeme-entree-express-du-canada-les-7-premiers-mois/" target="_blank">https://immigration.ca/fr/le-systeme-entree-express-du-canada-les-7-premiers-mois/</a></li>
+                <li> <a href="https://www.canadim.com/fr/immigrer/entree-express/" target="_blank">https://www.canadim.com/fr/immigrer/entree-express/</a></li>
+                <li> <a href="https://directdemenagement.com/entree-express-canada-2025-comment-obtenir-la-residence-permanente-en-6-etapes-cles/" target="_blank">https://directdemenagement.com/entree-express-canada-2025-comment-obtenir-la-residence-permanente-en-6-etapes-cles/</a></li>
+                <li> <a href="https://www.quebecentete.com/vivre-a-quebec/résidence-permanente" target="_blank">https://www.quebecentete.com/vivre-a-quebec/résidence-permanente</a></li>
+                <li> <a href="https://www.canadavisa.com/fr/quebec-immigration-quebec-selection-certificate.html" target="_blank">https://www.canadavisa.com/fr/quebec-immigration-quebec-selection-certificate.html</a></li>
+                <li> <a href="https://maplr.co/pstq-le-programme-de-selection-des-travailleurs-qualifies/" target="_blank">https://maplr.co/pstq-le-programme-de-selection-des-travailleurs-qualifies/</a></li>
+                <li> <a href="https://ladoualimmigration.ca/programme-pstq-quebec-2025/" target="_blank">https://ladoualimmigration.ca/programme-pstq-quebec-2025/</a></li>
+                <li> <a href="https://fr.immilandcanada.com/poste/pstq-trabajadores-calificados-quebec" target="_blank">https://fr.immilandcanada.com/poste/pstq-trabajadores-calificados-quebec</a></li>
+                <li> <a href="https://www.canadavisa.com/fr/quebec-experience-class-canadian-immigration.html" target="_blank">https://www.canadavisa.com/fr/quebec-experience-class-canadian-immigration.html</a></li>
+                <li> <a href="https://ircc.canada.ca/francais/centre-aide/reponse.asp?qnum=031&top=3" target="_blank">https://ircc.canada.ca/francais/centre-aide/reponse.asp?qnum=031&top=3</a></li>
+                <li> <a href="https://lepetitjournal.com/montreal/installation/cout-eleve-immigration-quebec-realite-365592" target="_blank">https://lepetitjournal.com/montreal/installation/cout-eleve-immigration-quebec-realite-365592</a></li>
+                <li> <a href="https://pvtistes.net/dossiers/tutoriel-residence-permanente-le-peq/4/" target="_blank">https://pvtistes.net/dossiers/tutoriel-residence-permanente-le-peq/4/</a></li>
+                <li> <a href="https://www.blg.com/fr/insights/2024/01/quebec-rolls-out-new-immigration-plan-and-increases-french-language-requirements" target="_blank">https://www.blg.com/fr/insights/2024/01/quebec-rolls-out-new-immigration-plan-and-increases-french-language-requirements</a></li>
+                <li> <a href="https://maplr.co/entree-express-tout-savoir-pour-sexpatrier-au-canada/" target="_blank">https://maplr.co/entree-express-tout-savoir-pour-sexpatrier-au-canada/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Temporis Talents. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

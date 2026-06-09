@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostez votre équipe avec les Talents Français - Temporis!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #C60019;
+            --primary-dark: #A00013;
+            --secondary: #212529;
+            --accent: #28A745;
+            --light: #FFFFFF;
+            --light-bg: #F8F9FA;
+            --border: #E0E0E0;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --footer-bg: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary);
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(198,0,25,0.1) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .nav-item {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .highlight-card {
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            background-color: rgba(198,0,25,0.05);
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            font-family: serif;
+        }
+
+        .comparison-row:hover td {
+            background-color: rgba(198,0,25,0.05) !important;
+        }
+
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .scroll-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://www.dropbox.com/scl/fi/02t2pk27cr51mjj57i6q0/Temporis_canda_240.png?rlkey=4ycgc17jeou99x84ba8hl9m39&st=t5tlrtx6&dl=1" 
+                         alt="Logo Temporis Canada" 
+                         class="h-16 mr-4">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Temporis Talents</h1>
+                        <p class="text-sm md:text-base text-gray-600">Solutions de recrutement France-Québec</p>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Contactez-nous
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Pénurie de talents? <span class="text-red-600">La France</span> a la solution!
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Découvrez les avantages uniques de recruter des professionnels français pour votre entreprise québécoise.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#avantages" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full text-center transition-all duration-300">
+                            Découvrir les avantages <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="#contact" class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-full border border-red-600 text-center transition-all duration-300">
+                            Parler à un expert <i class="fas fa-phone-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Équipe multiculturelle"
+                         class="rounded-xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Shortcuts -->
+    <nav class="bg-gray-900 py-4 sticky top-20 z-40 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <a href="#pourquoi" class="nav-item text-white hover:text-red-300 font-medium text-sm md:text-base">
+                    <i class="fas fa-question-circle mr-2"></i> Pourquoi la France?
+                </a>
+                <a href="#diplomes" class="nav-item text-white hover:text-red-300 font-medium text-sm md:text-base">
+                    <i class="fas fa-graduation-cap mr-2"></i> Diplômes Reconnus
+                </a>
+                <a href="#immigration" class="nav-item text-white hover:text-red-300 font-medium text-sm md:text-base">
+                    <i class="fas fa-passport mr-2"></i> Immigration Simplifiée
+                </a>
+                <a href="#integration" class="nav-item text-white hover:text-red-300 font-medium text-sm md:text-base">
+                    <i class="fas fa-hands-helping mr-2"></i> Intégration Facile
+                </a>
+                <a href="#comparatif" class="nav-item text-white hover:text-red-300 font-medium text-sm md:text-base">
+                    <i class="fas fa-balance-scale mr-2"></i> Comparatif
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Introduction Section -->
+        <section id="pourquoi" class="section-card bg-white rounded-xl shadow-md p-8 mb-12 scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-globe-europe text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Votre prochain talent est peut-être Français!</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-6">Face aux défis du recrutement, avez-vous pensé à regarder de l'autre côté de l'Atlantique? Recruter un professionnel français via <strong class="text-red-600">Temporis Talents</strong> offre des avantages souvent méconnus, surtout pour une première expérience à l'international.</p>
+                    
+                    <div class="highlight-card bg-red-50 p-6 rounded-lg mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-red-600 text-xl mt-1 mr-3"></i>
+                            <p class="text-gray-800"><strong class="text-red-600">L'Atout Secret:</strong> L'Entente France-Québec! Un accord bilatéral unique qui fluidifie la reconnaissance des qualifications et les démarches administratives. Un avantage concurrentiel majeur pour attirer les meilleurs talents francophones.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                         alt="Collaboration internationale"
+                         class="rounded-lg shadow-md w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Diplômes Section -->
+        <section id="diplomes" class="section-card bg-white rounded-xl shadow-md p-8 mb-12 scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-graduation-cap text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Reconnaissance Accélérée des Diplômes</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-6">L'<strong class="text-red-600">Entente France-Québec sur la reconnaissance mutuelle des qualifications professionnelles (ARM)</strong> est une véritable passerelle pour plus de <strong class="text-red-600">80 professions et métiers réglementés</strong>.</p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Pour un professionnel français, cela signifie :</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Accès simplifié aux autorisations d'exercer au Québec</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Processus nettement plus rapides que pour d'autres nationalités</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="testimonial-card relative bg-gray-50 p-6 rounded-lg">
+                        <p class="text-gray-700 italic mb-4">« Cet accord bilatéral est unique par sa teneur et son ampleur et n'a guère d'équivalent au niveau international (hors Union européenne). Il a été rendu possible par la relation privilégiée qu'entretiennent le Québec et la France. »</p>
+                        <p class="text-gray-600 font-medium">– Source: Entente Québec-France</p>
+                        </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
+                        Bénéfices immédiats pour vous, employeur :
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-bolt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Recrutement rapide</h4>
+                                <p class="text-gray-600">Des talents opérationnels en un temps record</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-clock text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Délais réduits</h4>
+                                <p class="text-gray-600">Intégration administrative accélérée</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start p-4 bg-gray-50 rounded-lg">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Risques minimisés</h4>
+                                <p class="text-gray-600">Moins de refus d'équivalence ou de retards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immigration Section -->
+        <section id="immigration" class="section-card bg-white rounded-xl shadow-md p-8 mb-12 scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-passport text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Simplification des Démarches d'Immigration</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-8">Les professionnels français sont éligibles à des programmes de permis de travail fermés qui sont de véritables aubaines pour les employeurs québécois. Moins de paperasse, moins de contraintes, plus d'efficacité!</p>
+            
+            <div class="overflow-x-auto mb-8">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-red-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Permis</th>
+                            <th class="py-3 px-4 text-left">Durée</th>
+                            <th class="py-3 px-4 text-left">Avantages Clés</th>
+                            <th class="py-3 px-4 text-left">Éligibilité</th>
+                            <th class="py-3 px-4 text-left">Impact Quotas</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Jeune Pro (EIC)</td>
+                            <td class="py-3 px-4">24 mois</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Aucune obligation pour l'employeur</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Français (quota élevé)</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-xs">N'impacte PAS</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">EIMT haut salaire (≥32.96$/h)</td>
+                            <td class="py-3 px-4">Jusqu'à 36 mois</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Aucune obligation pour l'employeur</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Toutes nationalités</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-xs">N'impacte PAS</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">EIMT bas salaire (<32.96$/h)</td>
+                            <td class="py-3 px-4">12 mois</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                                    <span>Obligations spécifiques</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Toutes nationalités</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-red-100 text-red-800 py-1 px-2 rounded-full text-xs">Soumis</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-red-600 mr-3"></i>
+                Ce qu'il faut retenir (les "pépites" pour vous!) :
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-red-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-money-bill-wave text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800">Zéro charge additionnelle</h4>
+                    </div>
+                    <p class="text-gray-600">Pour les permis Jeune Pro et EIMT Hauts salaires (hors salaire et charges sociales habituelles).</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-red-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-rocket text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800">Traitement prioritaire</h4>
+                    </div>
+                    <p class="text-gray-600">Pour les candidats français grâce aux accords bilatéraux.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-red-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-chart-line text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800">Flexibilité sur les quotas</h4>
+                    </div>
+                    <p class="text-gray-600">Recrutez des talents français à haut salaire sans impacter votre quota.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-red-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-gamepad text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-800">Game changer</h4>
+                    </div>
+                    <p class="text-gray-600">Le permis Jeune Pro (EIC) pour intégrer rapidement de jeunes talents sans contraintes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intégration Section -->
+        <section id="integration" class="section-card bg-white rounded-xl shadow-md p-8 mb-12 scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-hands-helping text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Intégration Culturelle et Sociale Facilitée</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-6">La langue commune, les références culturelles partagées et des valeurs souvent proches des nôtres font des professionnels français des candidats à l'intégration rapide et réussie.</p>
+                    
+                    <div class="testimonial-card relative bg-gray-50 p-6 rounded-lg mb-6">
+                        <p class="text-gray-700 italic mb-4">« Les candidats que nous recherchons avec Temporis ont un véritable projet de vie au Québec. Ils arrivent avec leurs familles, leurs enfants, et une forte motivation à s'intégrer et à contribuer activement à notre entreprise et à la société québécoise. »</p>
+                        <p class="text-gray-600 font-medium">– Témoignage type d'un employeur conquis</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-heart text-red-600 mr-3"></i>
+                        Les + pour votre équipe et votre entreprise :
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-red-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-700">Risques de choc culturel ou d'échec d'intégration considérablement réduits</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-red-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-700">Meilleure rétention à long terme: des employés investis et fidèles</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-red-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-700">Communication fluide et adaptation immédiate au sein de vos équipes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Équipe multiculturelle"
+                             class="rounded-lg shadow-md w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparatif Section -->
+        <section id="comparatif" class="section-card bg-white rounded-xl shadow-md p-8 mb-12 scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-balance-scale text-red-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Comparatif: Français vs. Autre Nationalité Francophone</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-8">Pourquoi un talent français recruté via Temporis Talents fait-il souvent la différence?</p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-red-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Critère Clé</th>
+                            <th class="py-3 px-4 text-left">Professionnel Français 🇫🇷✨</th>
+                            <th class="py-3 px-4 text-left">Autres Nationalités 🌍❓</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Reconnaissance des diplômes</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                    <span>Rapide et simplifiée (Entente France-Québec)</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Souvent un parcours du combattant</td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Délai d'obtention du permis</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-tachometer-alt text-green-500 mr-2"></i>
+                                    <span>Court (4 à 12 semaines max)</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Variable, souvent plus long</td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Obligations financières</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-dollar-sign text-green-500 mr-2"></i>
+                                    <span>Aucune pour billet, logement, caution</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Parfois plus lourdes</td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Impact sur quotas</td>
+                            <td class="py-3 px-4">
+                                <span class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-sm">Nul pour EIC et EIMT haut salaire</span>
+                            </td>
+                            <td class="py-3 px-4">
+                                <span class="bg-gray-100 text-gray-800 py-1 px-2 rounded-full text-sm">Variable, peut impacter</span>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Intégration culturelle</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-heart text-red-500 mr-2"></i>
+                                    <span>Excellente, langue et culture partagées</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Variable, adaptation parfois délicate</td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Accompagnement</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    <span>Complet et spécialisé par Temporis</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Dépend de l'agence, souvent moins intégré</td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="py-3 px-4 font-medium">Taux de rétention</td>
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                                    <span>Élevé, projet de vie solide</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4">Plus incertain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gradient-to-r from-red-600 to-red-800 rounded-xl shadow-xl p-8 mb-12 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6">Prêt à explorer cette formidable opportunité?</h2>
+                <p class="text-xl mb-8 opacity-90">Temporis Talents est votre partenaire pour un recrutement international réussi.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        Contactez-nous <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="tel:+14385213035" class="border-2 border-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-phone-alt mr-2"></i> (438) 521-3035
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="https://www.dropbox.com/scl/fi/02t2pk27cr51mjj57i6q0/Temporis_canda_240.png?rlkey=4ycgc17jeou99x84ba8hl9m39&st=t5tlrtx6&dl=1" 
+                         alt="Logo Temporis Canada Footer" 
+                         class="h-12 mb-4">
+                    <p class="text-gray-400">Solutions de recrutement international France-Québec.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#pourquoi" class="text-gray-400 hover:text-white transition">Pourquoi la France?</a></li>
+                        <li><a href="#diplomes" class="text-gray-400 hover:text-white transition">Diplômes Reconnus</a></li>
+                        <li><a href="#immigration" class="text-gray-400 hover:text-white transition">Immigration Simplifiée</a></li>
+                        <li><a href="#integration" class="text-gray-400 hover:text-white transition">Intégration Facile</a></li>
+                    </ul>
+                </div>
+                <div id="contact">
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3"></i>
+                            <span>193 rue Henri Dunant, Laval, QC H7G 1H1</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>(438) 521-3035</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>gregoire@temporis.ca</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>© <script>document.write(new Date().getFullYear())</script> Temporis Talents. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="#contact" class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl z-50 floating-btn">
+        <i class="fas fa-paper-plane text-xl"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="topFunction()" id="scrollTopBtn" class="scroll-top fixed bottom-6 left-6 bg-gray-800 hover:bg-gray-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-xl z-50 transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Scroll to top button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("active");
+            } else {
+                scrollTopBtn.classList.remove("active");
+            }
+        }
+
+        function topFunction() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

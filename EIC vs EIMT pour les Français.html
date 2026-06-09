@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement International: Permis EIC (Jeunes Pro) vs EIMT</title>
+    <!-- Chargement des polices Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Définition des variables CSS pour les couleurs */
+        :root {
+            --main-red: #C60019;
+            --dark-red: #A00013;
+            --dark-gray-text: #212529;
+            --accent-green: #28A745;
+            --white: #FFFFFF;
+            --light-gray-bg: #F8F9FA;
+            --very-light-gray-border: #E0E0E0;
+            --footer-gray: #F0F0F0;
+        }
+
+        /* Styles généraux du corps de page */
+        body {
+            font-family: 'Open Sans', sans-serif; /* Police principale pour le texte */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--dark-gray-text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Styles pour les titres */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif; /* Police pour les titres et sous-titres */
+            color: var(--main-red);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Styles de l'en-tête */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%; /* Padding relatif pour la réactivité */
+            border-bottom: 1px solid var(--very-light-gray-border);
+            display: flex;
+            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile */
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        header .logo {
+            height: 50px; /* Taille du logo */
+            max-width: 100%; /* S'assure que le logo ne déborde pas */
+        }
+
+        /* Styles de la navigation */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Permet aux éléments du menu de passer à la ligne */
+            justify-content: center; /* Centre les éléments sur les petits écrans */
+        }
+
+        nav ul li {
+            margin: 10px 15px; /* Marge pour les éléments de menu */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray-text);
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+            padding-bottom: 5px; /* Espace pour le soulignement */
+        }
+
+        /* Effet de survol sur les éléments du menu (souligne l’élément) */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--main-red);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--main-red);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Section d'introduction (Hero Section) */
+        .hero-section {
+            background-color: var(--light-gray-bg);
+            padding: 80px 5%; /* Padding relatif */
+            text-align: center;
+            border-bottom: 1px solid var(--very-light-gray-border);
+        }
+
+        .hero-section h1 {
+            color: var(--dark-gray-text);
+            font-size: clamp(2em, 5vw, 3.5em); /* Taille de police fluide */
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: clamp(1em, 2vw, 1.2em); /* Taille de police fluide */
+            color: var(--dark-gray-text);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Styles des sections générales */
+        section {
+            padding: 60px 5%; /* Padding relatif */
+            border-bottom: 1px solid var(--very-light-gray-border);
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-gray-bg);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Styles des titres de section */
+        h2 {
+            font-size: clamp(1.8em, 4vw, 2.5em); /* Taille de police fluide */
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-green);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            border-radius: 2px;
+        }
+
+        /* Blocs de contenu */
+        .content-block {
+            margin-bottom: 40px;
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid var(--very-light-gray-border);
+        }
+
+        .content-block h3 {
+            font-size: clamp(1.3em, 3vw, 1.8em); /* Taille de police fluide */
+            color: var(--dark-gray-text);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--very-light-gray-border);
+            padding-bottom: 10px;
+        }
+
+        .content-block ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding: 0;
+        }
+
+        .content-block ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Tableau de comparaison */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden; /* S'assure que les coins arrondis sont appliqués */
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid var(--very-light-gray-border);
+            padding: 18px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background-color: var(--main-red);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        .comparison-table tr:nth-child(odd) {
+            background-color: var(--light-gray-bg);
+        }
+
+        /* Styles des boutons d'action */
+        .btn {
+            display: inline-block;
+            background-color: var(--main-red);
+            color: var(--white);
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 7px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Flottement sur les boutons d'action (léger mouvement vertical) */
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-5px); /* Léger mouvement vertical */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Ombre plus prononcée */
+        }
+
+        /* Grille de cartes */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.08); /* Ombre par défaut */
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--very-light-gray-border);
+        }
+
+        /* Effet d'ombre et soulèvement sur les cartes */
+        .card:hover {
+            transform: translateY(-8px); /* Soulèvement */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Ombre améliorée */
+        }
+
+        .card h3 {
+            color: var(--main-red);
+            margin-top: 0;
+            font-size: clamp(1.2em, 2.5vw, 1.6em);
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: var(--footer-gray);
+            color: var(--dark-gray-text);
+            text-align: center;
+            padding: 30px 5%; /* Padding relatif */
+            border-top: 1px solid var(--very-light-gray-border);
+            font-size: 0.9em;
+        }
+
+        .citation {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* Media Queries pour la réactivité */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+
+            header .logo {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            .hero-section, section {
+                padding: 50px 20px;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+            }
+
+            .content-block {
+                padding: 20px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr; /* Une colonne sur mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 2em;
+            }
+
+            .hero-section p {
+                font-size: 0.95em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo de l'entreprise -->
+        <img src="https://i.imgur.com/MuXNsBR.png" alt="Logo Temporis Talents" class="logo">
+        <nav>
+            <!-- Menu de navigation avec des liens internes -->
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#eic">EIC (Jeunes Pro)</a></li>
+                <li><a href="#eimt">EIMT (Haut salaire)</a></li>
+                <li><a href="#quebec">Spécificités Québec</a></li>
+                <li><a href="#comparaison">Comparaison</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section d'introduction -->
+        <section class="hero-section" id="introduction">
+            <h1>Guide de Recrutement International : EIC (Jeunes Professionnels) vs EIMT</h1>
+            <p>Ce document est destiné aux compagnies québécoises désireuses de recruter des professionnels français. Il présente une synthèse claire des différences entre les permis de travail liés au programme Expérience Internationale Canada (EIC - volet Jeunes Professionnels) et ceux nécessitant une Étude d'Impact sur le Marché du Travail (EIMT) pour les postes à haut salaire.</p>
+            <p style="font-size: 0.9em; margin-top: 20px; color: #555;">
+                <br><em>Ce document tient compte des informations fournies par Immigration, Réfugiés et Citoyenneté Canada (IRCC) valables à ce jour, le 6 juin 2025, et est sujet à d'éventuelles modifications gouvernementales. Il concerne uniquement les professionnels français et vise à fournir des informations générales pour comprendre les différences entre les programmes d'immigration applicables aux professionnels français. Il ne constitue pas un avis juridique ou professionnel en immigration.</em>
+            </p>
+        </section>
+
+        <!-- Section 1: EIC (Expérience Internationale Canada) -->
+        <section id="eic">
+            <div class="container">
+                <h2>1. Expérience Internationale Canada (EIC) - Volet Jeunes Professionnels</h2>
+                <p>Le programme EIC permet aux jeunes français (généralement 18-35 ans) de travailler temporairement au Canada. Les permis de travail EIC sont dispensés d'EIMT et relèvent du Programme de mobilité internationale (PMI).</p>
+
+                <div class="content-block">
+                    <h3>Permis Jeunes Professionnels</h3>
+                    <ul>
+                        <li><strong>Objectif :</strong> Acquérir une expérience professionnelle au Canada dans son domaine de compétences.</li>
+                        <li><strong>Offre d'emploi :</strong> Une offre d'emploi est nécessaire, qui doit contribuer au perfectionnement professionnel et correspondre aux catégories de la Classification nationale des professions (CNP) de niveau 0, 1, 2 ou 3.</li>
+                        <li><strong>Type de permis :</strong> Lié à un employeur donné (vous lie à un employeur spécifique).</li>
+                        <li><strong>Durée maximale :</strong> Généralement 24 mois pour les citoyens français.</li>
+                        <li><strong>Processus employeur :</strong> L'employeur paie des frais de conformité et soumet l'offre d'emploi via le Portail des employeurs.</li>
+                        <li><strong>Processus travailleur :</strong> Créer un profil EIC, entrer dans le bassin de candidats, attendre une invitation, puis soumettre la demande de permis de travail en ligne. Le permis final est délivré à l'arrivée au Canada.</li>
+                    </ul>
+                </div>
+                <p class="citation"><em>Note : Le programme EIC inclut également le PVT (permis ouvert, pas d'offre d'emploi requise) et les Stages coop internationaux, mais cette présentation se concentre sur le volet Jeunes Professionnels.</em></p>
+            </div>
+        </section>
+
+        <!-- Section 2: EIMT (Étude d'Impact sur le Marché du Travail) - Haut salaire -->
+        <section id="eimt">
+            <div class="container">
+                <h2>2. Étude d'Impact sur le Marché du Travail (EIMT) - Haut salaire</h2>
+                <p>L'EIMT est un document délivré par Emploi et Développement social Canada (EDSC) qui évalue l'impact de l'embauche d'un travailleur étranger sur le marché du travail canadien. Une EIMT positive est généralement requise avant d'embaucher un travailleur étranger temporaire dans le cadre du Programme des travailleurs étrangers temporaires (PTET).</p>
+
+                <div class="content-block">
+                    <h3>Poste à haut salaire</h3>
+                    <p>Un poste à haut salaire est un emploi dont le salaire offert est supérieur au salaire médian provincial ou territorial pour cette profession dans la région de l'emploi.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Exigences et Processus</h3>
+                    <ul>
+                        <li><strong>Exigence d'EIMT :</strong> Nécessite une EIMT positive qui confirme un besoin de main-d'œuvre et l'absence de Canadiens/résidents permanents disponibles.</li>
+                        <li><strong>Processus employeur :</strong> L'employeur doit faire une demande d'EIMT auprès d'EDSC/Service Canada, généralement via le portail EIMT en ligne. L'employeur doit démontrer ses efforts de recrutement auprès des Canadiens et peut devoir présenter un plan de transition.</li>
+                        <li><strong>Offre d'emploi :</strong> Une offre d'emploi détaillée est toujours requise et est liée à un poste spécifique.</li>
+                        <li><strong>Type de permis :</strong> Lié à un employeur donné.</li>
+                        <li><strong>Critère d'âge :</strong> Pas de limite d'âge spécifique pour le travailleur.</li>
+                        <li><strong>Durée maximale :</strong> Généralement jusqu'à 3 ans, selon les besoins de l'employeur.</li>
+                        <li><strong>Processus travailleur :</strong> Le travailleur étranger peut demander un permis de travail APRES que l'employeur ait reçu une EIMT positive.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Particularités au Québec -->
+        <section id="quebec">
+            <div class="container">
+                <h2>3. Spécificités pour le Québec</h2>
+                <p>Au Québec, l'immigration temporaire relève à la fois du gouvernement du Québec (MIFI) et du gouvernement du Canada (EDSC/IRCC).</p>
+
+                <div class="content-block">
+                    <h3>Pour les postes nécessitant une EIMT au Québec</h3>
+                    <ul>
+                        <li>L'employeur doit présenter les demandes <strong>simultanément</strong> à EDSC/Service Canada et au MIFI.</li>
+                        <li>Toutes les demandes d'EIMT présentées au Québec doivent être en français.</li>
+                        <li>Si la demande conjointe est approuvée par le MIFI, le travailleur étranger reçoit un <strong>Certificat d'acceptation du Québec (CAQ)</strong> pour travail temporaire.</li>
+                        <li>Le CAQ est nécessaire pour qu'IRCC puisse délivrer le permis de travail.</li>
+                    </ul>
+                </div>
+
+                <div class="content-block">
+                    <h3>Pour les permis EIC au Québec</h3>
+                    <ul>
+                        <li>Le Québec n'intervient pas dans l'admission du travailleur temporaire au stade de la demande de permis de travail initial, car les permis EIC sont exemptés d'EIMT et font partie du Programme de mobilité internationale.</li>
+                        <li>Cependant, comme tout résident temporaire au Québec, un participant EIC est soumis aux lois et règlements provinciaux applicables pendant son séjour.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Tableau Comparatif -->
+        <section id="comparaison">
+            <div class="container">
+                <h2>4. Résumé des Principales Différences</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Caractéristique</th>
+                            <th>Permis EIC (Jeunes Professionnels)</th>
+                            <th>Permis basé sur EIMT Haut Salaire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Exigence d'EIMT</td>
+                            <td>Dispensé d'EIMT</td>
+                            <td>Nécessite une EIMT positive de l'employeur</td>
+                        </tr>
+                        <tr>
+                            <td>Critère d'âge</td>
+                            <td>Limité aux 18-35 ans</td>
+                            <td>Pas de limite d'âge spécifique pour le travailleur</td>
+                        </tr>
+                        <tr>
+                            <td>Offre d'emploi</td>
+                            <td>Requise</td>
+                            <td>Toujours requise, liée à l'EIMT</td>
+                        </tr>
+                        <tr>
+                            <td>Processus employeur</td>
+                            <td>Portail des employeurs</td>
+                            <td>Demande d'EIMT via portail EIMT en ligne</td>
+                        </tr>
+                        <tr>
+                            <td>Type de permis</td>
+                            <td>Lié à l'employeur donné</td>
+                            <td>Lié à l'employeur donné</td>
+                        </tr>
+                        <tr>
+                            <td>Durée maximale</td>
+                            <td>Jusqu'à 2 ans</td>
+                            <td>Jusqu'à 3 ans</td>
+                        </tr>
+                        <tr>
+                            <td>Processus travailleur</td>
+                            <td>Profil EIC, bassin, invitation, puis demande en ligne</td>
+                            <td>Demande de permis de travail après l'EIMT positive de l'employeur</td>
+                        </tr>
+                        <tr>
+                            <td>Famille à charge</td>
+                            <td>Doivent postuler séparément; conjoint possiblement admissible à un permis ouvert</td>
+                            <td>Conjoint possiblement admissible à un permis ouvert; enfants peuvent étudier/travailler</td>
+                        </tr>
+                        <tr>
+                            <td>Spécificités Québec</td>
+                            <td>Programme fédéral (PMI)</td>
+                            <td>Demande EIMT/DST simultanée EDSC/MIFI; CAQ requis pour le permis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5: Conclusion -->
+        <section id="conclusion">
+            <div class="container">
+                <h2>5. Conclusion</h2>
+                <p>Pour une compagnie québécoise, le choix entre le programme EIC (Jeunes Professionnels) et un permis basé sur une EIMT haut salaire dépendra principalement de l'âge du candidat et des délais de traitement. Les deux programmes aboutissent à un permis de travail lié à un employeur donné. Le programme EIC (volet Jeunes Professionnels) est généralement plus simple et rapide pour les jeunes éligibles, tandis que l'EIMT permet de recruter des professionnels de tout âge, mais implique un processus plus lourd et coûteux, surtout au Québec avec la double approbation fédérale et provinciale.</p>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="#top" class="btn">Retour au début</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Temporis Talents. Tous droits réservés.</p>
+        <p class="citation">
+            Sources: <br>
+            • Expérience internationale Canada (EIC) - Gouvernement du Canada<br>
+            • Étude d'impact sur le marché du travail (EIMT) - Emploi et Développement social Canada (EDSC)<br>
+            • Ministère de l'Immigration, de la Francisation et de l'Intégration (MIFI) - Gouvernement du Québec
+        </p>
+    </footer>
+</body>
+</html>

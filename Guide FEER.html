@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide du Système FEER pour les Entreprises Québécoises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --rouge-principal: #C60019;
+            --rouge-fonce: #A00013;
+            --gris-fonce: #212529;
+            --vert-accent: #28A745;
+            --blanc: #FFFFFF;
+            --gris-clair: #F8F9FA;
+            --gris-tres-clair: #E0E0E0;
+            --gris-footer: #F0F0F0;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--gris-fonce);
+            background-color: var(--blanc);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gris-fonce);
+        }
+        .header-bg {
+            background-color: var(--rouge-principal);
+        }
+        .btn-primary {
+            background-color: var(--rouge-principal);
+            color: var(--blanc);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            background-color: var(--blanc);
+            border: 1px solid var(--gris-tres-clair);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .section-bg {
+            background-color: var(--gris-clair);
+        }
+        .footer-bg {
+            background-color: var(--gris-footer);
+        }
+        .nav-item {
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--blanc);
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- En-tête -->
+    <header class="header-bg text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <img src="https://i.imgur.com/MuXNsBR.png" alt="Logo Temporis Talents" class="h-12 mr-3 rounded-full">
+                <h1 class="text-3xl font-bold">Temporis Talents</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#introduction" class="nav-item text-lg font-semibold">Introduction</a></li>
+                    <li><a href="#categories" class="nav-item text-lg font-semibold">Catégories FEER</a></li>
+                    <li><a href="#importance" class="nav-item text-lg font-semibold">Importance</a></li>
+                    <li><a href="#recommandations" class="nav-item text-lg font-semibold">Recommandations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 px-4">
+        <!-- Section Introduction -->
+        <section id="introduction" class="mb-12">
+            <h2 class="text-4xl font-bold text-center mb-8">Le Système FEER : Un Guide Essentiel pour les Entreprises Québécoises</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Le système FEER (Formation, Études, Expérience et Responsabilités) est le cadre de classification des professions utilisé au Canada depuis novembre 2022. Il est un élément central du processus d'immigration canadien et remplace l'ancienne classification. Comprendre le système FEER est crucial pour les entreprises québécoises qui souhaitent recruter des talents à l'international.
+            </p>
+            <p class="text-lg leading-relaxed">
+                FEER fait partie intégrante de la Classification nationale des professions (CNP) 2021, qui utilise des codes à 5 chiffres pour identifier chaque profession. Le deuxième chiffre du code CNP correspond au niveau FEER de la profession, indiquant son niveau de qualification.
+            </p>
+        </section>
+
+        <!-- Section Les 6 Catégories FEER expliquées -->
+        <section id="categories" class="section-bg rounded-lg p-8 mb-12 shadow-md">
+            <h3 class="text-3xl font-bold text-center mb-8">Les 6 Catégories FEER expliquées</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 0 - Postes de gestion</h4>
+                    <p class="text-md text-center">
+                        Exigences : Postes de direction et de gestion. Exemples : Responsables de la publicité, Directeurs financiers, Directeurs des ressources humaines.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 1 - Professions universitaires</h4>
+                    <p class="text-md text-center">
+                        Exigences : Diplôme universitaire généralement requis. Exemples : Conseillers financiers, Ingénieurs en logiciel, Médecins, avocats, enseignants.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 2 - Professions techniques qualifiées</h4>
+                    <p class="text-md text-center">
+                        Exigences : Diplôme d'études collégiales, apprentissage de 2 ans ou plus, ou tâches de supervision. Exemples : Techniciens en réseaux informatiques, Technologues de laboratoires médicaux.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 3 - Professions intermédiaires</h4>
+                    <p class="text-md text-center">
+                        Exigences : Diplôme d'études collégiales, apprentissage de moins de 2 ans, ou formation en cours d'emploi de plus de 6 mois. Exemples : Boulanger-pâtissier, Assistants dentaires.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 4 - Professions semi-qualifiées</h4>
+                    <p class="text-md text-center">
+                        Exigences : Diplôme d'études secondaires ou formation en cours d'emploi de quelques semaines. Exemples : Gardiens d'enfants en milieu familial, Vendeurs en commerce de détail.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">FEER 5 - Professions non qualifiées</h4>
+                    <p class="text-md text-center">
+                        Exigences : Démonstration de travail à court terme, aucune scolarité formelle requise. Exemples : Manœuvres en aménagement paysager, Chauffeurs-livreurs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Pourquoi le niveau FEER est-il crucial pour votre entreprise ? -->
+        <section id="importance" class="mb-12">
+            <h3 class="text-3xl font-bold text-center mb-8">Pourquoi le niveau FEER est-il crucial pour votre entreprise ?</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Détermination du statut "hautement qualifié"</h4>
+                    <p class="text-md text-center">
+                        Les professions FEER 0, 1, 2 et 3 sont considérées comme des emplois qualifiés, distinction fondamentale pour l'éligibilité aux programmes d'immigration et l'accès aux permis de travail ouverts pour les conjoints.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Impact sur les permis de travail pour les conjoints</h4>
+                    <p class="text-md text-center">
+                        Depuis le 21 janvier 2025, l'accès au permis de travail ouvert pour les conjoints est limité aux travailleurs étrangers occupant des professions FEER 0 ou 1, ou certaines professions FEER 2 ou 3 spécifiquement identifiées.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md col-span-full">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Éligibilité aux programmes d'immigration permanente</h4>
+                    <p class="text-md text-center">
+                        Les candidats doivent généralement avoir une expérience dans une profession FEER 0, 1, 2 ou 3 pour être éligibles aux principaux programmes d'immigration permanente (Programme des travailleurs qualifiés, Catégorie de l'expérience canadienne, Programme de l'expérience québécoise).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Recommandations pour les employeurs québécois -->
+        <section id="recommandations" class="section-bg rounded-lg p-8 mb-12 shadow-md">
+            <h3 class="text-3xl font-bold text-center mb-8">Recommandations pour les employeurs québécois</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Identifiez le bon code CNP et niveau FEER</h4>
+                    <p class="text-md text-center">
+                        Consultez la classification officielle, utilisez le code CNP exact dans vos offres d'emploi et vérifiez que le niveau FEER correspond aux qualifications du candidat.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Mettez en valeur le niveau FEER dans votre recrutement</h4>
+                    <p class="text-md text-center">
+                        Mentionnez clairement le niveau FEER dans vos offres, expliquez les avantages immigration associés et utilisez cet argument pour attirer les candidats qualifiés.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-md col-span-full">
+                    <h4 class="text-2xl font-semibold mb-3 text-center">Accompagnez vos candidats</h4>
+                    <p class="text-md text-center">
+                        Informez-les sur les implications du niveau FEER pour leur immigration, orientez-les vers les ressources appropriées et facilitez leur intégration en expliquant les opportunités pour leur famille.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="text-center">
+            <p class="text-lg leading-relaxed mb-6">
+                Le système FEER représente un outil stratégique pour les entreprises québécoises souhaitant recruter des talents qualifiés. En comprenant ces classifications, vous maximisez vos chances de succès dans le recrutement international et contribuez à l'intégration réussie de vos nouveaux employés.
+            </p>
+            <p class="text-lg font-semibold text-vert-accent">
+                Optimisez votre stratégie de recrutement international grâce au système FEER !
+            </p>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer-bg text-gris-fonce py-6 text-center shadow-inner">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Temporis Talents. Tous droits réservés.</p>
+            <p class="text-sm mt-2">Document créé pour informer les entreprises québécoises sur le système FEER.</p>
+        </div>
+    </footer>
+</body>
+</html>

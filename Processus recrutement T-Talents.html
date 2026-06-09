@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processus de Recrutement - T-Talents & KBS Immigration</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#E4002B',
+                        brandRedDark: '#C30024',
+                        brandBlue: '#0A2540',
+                        lightGray: '#F9FAFB',
+                        borderGray: '#E5E7EB'
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                font-size: 12px;
+            }
+            .print-page-break {
+                page-break-before: always;
+            }
+            .shadow-lg, .shadow-md, .shadow-xl {
+                box-shadow: none !important;
+            }
+            .border {
+                border-color: #d1d5db !important;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col justify-between">
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 flex-grow">
+        <!-- HEADER SHEET -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 mb-8">
+            <!-- Top brand band -->
+            <div class="h-3 bg-gradient-to-r from-brandRed to-brandBlue"></div>
+            
+            <div class="p-6 md:p-10">
+                <!-- Logos & Info Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-gray-100 pb-8">
+                    <div class="space-y-4">
+                        <img src="https://i.imgur.com/w935pCA.png" alt="T-Talents Logo" class="h-16 object-contain">
+                        <div>
+                            <h1 class="text-2xl md:text-3xl font-black text-brandBlue tracking-tight">PROCESSUS DE RECRUTEMENT</h1>
+                            <p class="text-gray-500 font-semibold text-sm">Passerelle clé en main entre la France et le Québec</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intro / Value Prop -->
+                <div class="grid md:grid-cols-3 gap-6 pt-8 text-sm">
+                    <div class="md:col-span-2 space-y-3">
+                        <h3 class="text-lg font-bold text-brandBlue">Notre Double Culture à Votre Service</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Chez <strong>T-Talents</strong>, notre équipe est composée d'immigrants français établis au Québec. Nous comprenons parfaitement les enjeux, les peurs et les formalités administratives des deux côtés de l’Atlantique. Grâce à notre 
+                            <a href="https://www.temporis-franchise.fr/agences" target="_blank" class="text-brandRed font-extrabold underline decoration-brandRed decoration-2 hover:text-brandRedDark transition inline-flex items-center gap-1.5 bg-red-50/70 px-2 py-0.5 rounded-md">
+                                réseau de plus de 200 agences partenaires en France 
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>, 
+                            nous ciblons et sélectionnons pour vous les meilleurs talents francophones prêts à s'intégrer rapidement.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-50 to-red-50 p-5 rounded-xl border border-red-100 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-brandRed uppercase tracking-wider">L'Accord France-Québec</span>
+                            <h4 class="font-bold text-brandBlue mt-1 mb-2">Immigration Accélérée</h4>
+                        </div>
+                        <ul class="text-xs space-y-1.5 text-gray-600">
+                            <li><i class="fas fa-check text-green-600 mr-1.5"></i> Reconnaissance de 81 professions (ARM)</li>
+                            <li><i class="fas fa-check text-green-600 mr-1.5"></i> Permis obtenus en 4 à 12 semaines</li>
+                            <li><i class="fas fa-check text-green-600 mr-1.5"></i> Voie rapide vers la résidence permanente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMELINE SECTION -->
+        <div class="space-y-6">
+            <h2 class="text-2xl font-extrabold text-brandBlue flex items-center gap-3 px-2">
+                <i class="fas fa-route text-brandRed"></i> Les 12 étapes de votre parcours de recrutement
+            </h2>
+
+            <!-- The Visual Timeline Grid -->
+            <div class="relative pl-6 md:pl-10 border-l-2 border-brandRed/30 ml-4 md:ml-6 space-y-8 py-4">
+
+                <!-- STEP 1 -->
+                <div class="relative">
+                    <!-- Dot Marker -->
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">1</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Validation de l'offre de service</h3>
+                            <span class="bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full text-xs font-bold">Étape Préparatoire</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Validation des conditions de collaboration au tout début de notre relation. T-Talents vous proposant de manière proactive un profil qualifié, le but de cette étape est de valider et de convenir des modalités réglementaires et commerciales du mandat avant toute mise en relation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">2</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Entrevue de sélection (Teams)</h3>
+                            <span class="bg-green-100 text-green-800 px-2.5 py-1 rounded-full text-xs font-bold">Risque 0 %</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Nous planifions une entrevue vidéo Teams entre votre équipe et le candidat présélectionné en France. 
+                            <strong class="font-black text-brandRed">Si l'entreprise ou le candidat décide de ne pas donner suite après cette entrevue : aucuns frais ne vous sont facturés.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">3</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Rédaction de l'offre d'emploi conforme</h3>
+                            <span class="bg-yellow-100 text-yellow-800 px-2.5 py-1 rounded-full text-xs font-bold">Conformité Légale</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Si vous souhaitez embaucher le candidat, votre entreprise émet une offre d'emploi. Pour garantir la réussite des futures démarches d’immigration, cette offre doit impérativement respecter les modalités réglementaires indiquées par T-Talents afin d’être conforme aux exigences strictes d’<strong>IRCC</strong> (Immigration, Réfugiés et Citoyenneté Canada).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">4</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Transmission & Rapprochement</h3>
+                            <span class="bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full text-xs font-bold">Accompagnement candidat</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            T-Talents transmet l'offre officielle au candidat en France. Nous organisons une session d'échange (« rapprochement ») pour répondre précisément à toutes ses questions et à celles de sa famille concernant l'emploi et le futur projet d'immigration.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">5</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <h3 class="font-bold text-lg text-brandBlue mb-2">Délai de réflexion</h3>
+                        <p class="text-gray-600 text-sm">
+                            Le candidat dispose d’un délai raisonnable pour réfléchir et valider formellement sa décision d'expatriation au Québec avec ses proches.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 6 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">6</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Signature de l'offre & Facturation de 50 %</h3>
+                            <span class="bg-red-100 text-red-800 px-2.5 py-1 rounded-full text-xs font-bold">1er Versement (Prestation de recrutement)</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Dès que le candidat accepte et signe officiellement son offre d’emploi, le mandat de recrutement est complet. 
+                            <strong class="font-black text-brandBlue">La compagnie procède alors au paiement de 50 % de la prestation de T-Talents.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 7 -->
+                <div class="relative print-page-break">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">7</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-brandBlue/30 hover:border-brandBlue transition duration-200 bg-gradient-to-br from-white to-blue-50/20">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Partenaire Officiel en Immigration</span>
+                                <h3 class="font-bold text-xl text-brandBlue mt-0.5">Mise en relation avec KBS Immigration</h3>
+                            </div>
+                            <a href="https://kbsimmigration.com/" target="_blank" class="no-print">
+                                <img src="https://i.imgur.com/Zsx0med.png" alt="Logo KBS Immigration" class="h-14 object-contain hover:opacity-80 transition">
+                            </a>
+                            <img src="https://i.imgur.com/Zsx0med.png" alt="Logo KBS Immigration" class="h-14 object-contain hidden print:block">
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Le processus légal d’immigration est confié à notre partenaire d’affaires <strong>KBS Immigration</strong>. 
+                            KBS transmet sa propre offre de services directement à votre compagnie. 
+                            <strong class="font-black text-brandBlue">Cette offre est validée et payée séparément, directement à KBS Immigration, selon leurs propres modalités d'honoraires.</strong>
+                        </p>
+                        <div class="bg-white/80 p-3 rounded-lg border border-gray-200 flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fas fa-globe text-brandBlue"></i> Site web : <a href="https://kbsimmigration.com/" target="_blank" class="text-brandBlue font-semibold hover:underline">kbsimmigration.com</a></span>
+                            <span>Démarches réglementées par le CRIC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 8 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">8</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Constitution du dossier candidat</h3>
+                            <span class="bg-blue-50 text-brandBlue px-2.5 py-1 rounded-full text-xs font-bold">KBS Immigration</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Le cabinet KBS Immigration prend directement contact avec le candidat sélectionné en France pour rassembler tous ses justificatifs, diplômes, documents d'état civil et bancaires requis afin de monter un dossier d'immigration complet et solide.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 9 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">9</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Dépôt du dossier auprès de l'IRCC</h3>
+                            <span class="bg-blue-50 text-brandBlue px-2.5 py-1 rounded-full text-xs font-bold">KBS Immigration</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Une fois l'ensemble des pièces nécessaires rassemblées auprès du candidat et de votre entreprise (fiches d'évaluation de l'emploi, contrats, etc.), KBS Immigration finalise et dépose officiellement la demande d'immigration auprès de l'IRCC pour l'obtention du permis de travail.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 10 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">10</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Préparation au départ & Relocalisation</h3>
+                            <span class="bg-red-50 text-brandRed px-2.5 py-1 rounded-full text-xs font-bold">T-Talents</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            T-Talents intervient pour encadrer la transition de vie du candidat. Nous accompagnons le futur travailleur et sa famille dans l’organisation matérielle du grand départ (démarches bancaires, logistique, conseils de logement, intégration culturelle et installation au Québec).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 11 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">11</span>
+                    </span>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-brandRed/40 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Prise de poste & Facturation du solde (50 %)</h3>
+                            <span class="bg-red-100 text-red-800 px-2.5 py-1 rounded-full text-xs font-bold">Solde (Prestation de recrutement)</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Le candidat arrive au Québec et débute officiellement son travail au sein de votre équipe. 
+                            <strong>Le paiement des 50 % restants de la prestation de T-Talents est dû à ce moment précis (le jour de sa prise de fonction).</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- STEP 12 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] md:-left-[51px] top-1 bg-white border-4 border-brandRed w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-[10px] md:text-xs font-black text-brandRed">12</span>
+                    </span>
+                    <div class="bg-gradient-to-br from-red-50/10 to-red-50/40 p-6 rounded-xl shadow-sm border-2 border-dashed border-brandRed/30 hover:border-brandRed/60 transition duration-200">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+                            <h3 class="font-bold text-lg text-brandBlue">Garantie d'intégration de 3 mois</h3>
+                            <span class="bg-brandRed text-white px-2.5 py-1 rounded-full text-xs font-bold">Sécurité Employeur</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                            Si le candidat ne convient finalement pas aux exigences requises pour le poste dans les 3 mois suivant sa prise de poste officielle, <strong class="font-black text-brandRed">T-Talents s'engage à rechercher un nouveau profil de remplacement sans frais de recrutement supplémentaires</strong>.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border border-red-100 space-y-2 text-xs text-gray-500">
+                            <p><strong>Conditions de la garantie de remplacement :</strong></p>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>Période de recherche active gratuite d'une durée maximale de trois (3) mois (obligation de moyens, T-Talents ne pouvant pas garantir d'avance un résultat d'embauche).</li>
+                                <li>La garantie de remplacement <strong>exclut</strong> tous les frais gouvernementaux d'immigration ainsi que les honoraires de KBS Immigration.</li>
+                                <li>Si un nouveau candidat proposé par T-Talents est retenu, la nouvelle procédure d'immigration fera l'objet d'une nouvelle facturation complète par KBS Immigration à l'employeur.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RECAP CARDS -->
+        <div class="mt-12 grid md:grid-cols-2 gap-6 print:mt-8">
+            <!-- Recap Finance -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <h4 class="font-bold text-brandBlue text-md mb-3 flex items-center gap-2">
+                    <i class="fas fa-coins text-brandRed"></i> Récapitulatif Financier (T-Talents)
+                </h4>
+                <div class="space-y-2 text-sm text-gray-600">
+                    <div class="flex justify-between pb-1.5 border-b border-gray-100">
+                        <span>Sélection, tests et entretiens de présélection :</span>
+                        <span class="font-bold text-green-600">Gratuit (Sans risque)</span>
+                    </div>
+                    <div class="flex justify-between pb-1.5 border-b border-gray-100">
+                        <span>Signature officielle du candidat choisi :</span>
+                        <span class="font-bold text-brandBlue">50 % du montant requis</span>
+                    </div>
+                    <div class="flex justify-between pb-1.5 border-b border-gray-100">
+                        <span>Arrivée et prise de poste au Québec :</span>
+                        <span class="font-bold text-brandBlue">50 % restant (Solde)</span>
+                    </div>
+                    <div class="flex justify-between pt-1 font-semibold text-xs text-gray-400">
+                        <span>* Honoraires d'immigration :</span>
+                        <span>Facturés à part directement par KBS Immigration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recap Protection -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <h4 class="font-bold text-brandBlue text-md mb-3 flex items-center gap-2">
+                    <i class="fas fa-user-shield text-brandRed"></i> Vos Garanties Clés
+                </h4>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-brandRed mt-0.5"></i>
+                        <span><strong>Processus transparent</strong> : Aucun coût de recrutement initial sans candidat validé (sauf si vous nous mandatez pour une recherche sur mesure en France : 1 000 $).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-brandRed mt-0.5"></i>
+                        <span><strong>Suivi rigoureux</strong> : Vérifications complètes (antécédents, judiciaires, bancaires, tests techniques).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-brandRed mt-0.5"></i>
+                        <span><strong>Garantie 3 mois</strong> : Remplacement gratuit (frais d'immigration exclus) si non-conformité constatée.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandBlue text-white py-8 mt-12 border-t-4 border-brandRed">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <div class="flex items-center gap-4">
+                <img src="https://i.imgur.com/w935pCA.png" alt="Logo T-Talents" class="h-10 object-contain bg-white p-1.5 rounded">
+                <div>
+                    <p class="font-bold">Temporis Talents</p>
+                    <p class="text-gray-400 text-xs">Le pont solide entre les talents de France et l'avenir du Québec.</p>
+                </div>
+            </div>
+            
+            <div class="text-center md:text-right text-xs text-gray-400 space-y-1">
+                <p>© 2026 Temporis Talents. Tous droits réservés.</p>
+                <p class="text-gray-300 font-semibold">Permis d’agence de recrutement de travailleurs étrangers temporaires - AR-2303087</p>
+                <p>Collaborateur officiel en immigration : KBS Immigration (kbsimmigration.com)</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

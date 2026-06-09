@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporis Talents - Recrutement International France-Québec Facilité</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --temporis-red: #E4002B;
+            --dark-gray: #333333;
+            --medium-gray: #555555;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        /* Header & Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; /* Remplacez par une image de fond pertinente */
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s 0.5s ease-out backwards; /* backwards fills animation before it starts */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--temporis-red);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #c30024; /* Darker red */
+            transform: translateY(-3px);
+        }
+        .btn-secondary {
+            background-color: var(--dark-gray);
+        }
+        .btn-secondary:hover {
+            background-color: var(--medium-gray);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            animation: fadeInSection 0.8s ease-out;
+        }
+        section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        section h2.section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--temporis-red);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--temporis-red);
+            margin: 10px auto 0;
+        }
+        section h3 {
+            color: var(--dark-gray);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-40 { margin-bottom: 40px; }
+
+        /* Qui Sommes Nous / Notre Force */
+        .qui-sommes-nous .force-reseau ul {
+            list-style: none;
+            padding: 0;
+        }
+        .qui-sommes-nous .force-reseau li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .qui-sommes-nous .force-reseau li i {
+            color: var(--temporis-red);
+            margin-right: 10px;
+            width: 20px; /* For alignment */
+        }
+        .qui-sommes-nous .force-reseau li a {
+            color: var(--temporis-red);
+            text-decoration: none;
+        }
+         .qui-sommes-nous .force-reseau li a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Notre Solution / Avantage Accord */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .grid-item, .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .grid-item:hover, .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .grid-item i, .card i {
+            font-size: 2rem;
+            color: var(--temporis-red);
+            margin-bottom: 15px;
+            display: block; /* To allow margin-bottom */
+        }
+        .grid-item h4, .card h4 {
+            font-size: 1.2rem;
+            color: var(--temporis-red);
+            margin-bottom: 10px;
+        }
+
+        /* Pourquoi Choisir Temporis? */
+        .pourquoi-choisir ol {
+            list-style: none;
+            counter-reset: temporis-counter;
+            padding-left: 0;
+        }
+        .pourquoi-choisir li {
+            counter-increment: temporis-counter;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 45px;
+        }
+        .pourquoi-choisir li::before {
+            content: counter(temporis-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--temporis-red);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        /* Demystification - Mythes vs Réalités */
+        .mythes-realites .mythe {
+            background: #fff0f3; /* Light red background */
+            border-left: 5px solid var(--temporis-red);
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .mythes-realites .realite {
+            background: #e6ffed; /* Light green background */
+            border-left: 5px solid #28a745; /* Green */
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .mythes-realites .mythe strong, .mythes-realites .realite strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Contact */
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--temporis-red);
+        }
+        .contact-info a {
+            color: var(--dark-gray);
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            color: var(--temporis-red);
+            text-decoration: underline;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            text-align: center;
+            padding: 30px 20px;
+        }
+        footer .logo-footer { /* specific class for footer logo */
+            max-width: 120px;
+            margin-bottom: 15px;
+            /* filter: brightness(0) invert(1); Removed as the logo has white elements */
+        }
+        footer p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInSection { /* Apply to sections for staggered appearance */
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.2rem; }
+            section h2.section-title { font-size: 1.8rem; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="accueil">
+        <img src="https://www.dropbox.com/scl/fi/02t2pk27cr51mjj57i6q0/Temporis_canda_240.png?rlkey=4ycgc17jeou99x84ba8hl9m39&st=t5tlrtx6&dl=0&raw=1" alt="Logo Temporis Talents" class="logo">
+        <h1>Pénurie de talents au Québec ?<br>Et si la solution venait de France ? 🇫🇷✈️🇨🇦</h1>
+        <h2>Découvrez comment Temporis Talents simplifie le recrutement international pour votre entreprise, même si c'est votre première fois !</h2>
+        <a href="#solution" class="btn">EXPLOREZ LA SOLUTION TEMPORIS</a>
+    </header>
+
+    <main>
+        <!-- LE DÉFI QUÉBÉCOIS -->
+        <section id="defi" class="container">
+            <h2 class="section-title">🤯 Votre casse-tête : Trouver la perle rare au Québec ?</h2>
+            <p class="text-center mb-40">On le sait, dénicher des professionnels qualifiés au Québec, c'est parfois mission impossible ! La compétition est féroce, les délais s'allongent... Vous vous reconnaissez ? Pas de panique, vous n'êtes pas seuls !</p>
+            <div class="grid-container">
+                <div class="grid-item text-center">
+                    <i class="fas fa-search-minus"></i>
+                    <h4>Postes vacants qui s'éternisent ?</h4>
+                </div>
+                <div class="grid-item text-center">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Pression pour trouver des experts ?</h4>
+                </div>
+                <div class="grid-item text-center">
+                    <i class="fas fa-calendar-times"></i>
+                    <h4>Délais de recrutement trop longs ?</h4>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 30px; font-size: 1.1rem;">Et si on vous disait qu'il existe un vivier de talents francophones prêts à s'intégrer FACILEMENT dans votre équipe et la société québécoise ?</p>
+        </section>
+
+        <!-- QUI SOMMES-NOUS ? -->
+        <section id="qui-sommes-nous" class="qui-sommes-nous">
+            <div class="container">
+                <h2 class="section-title">Salut Québec ! Nous sommes Temporis Talents 👋</h2>
+                <p class="mb-20">Imaginez une agence de recrutement québécoise, mais avec un petit accent français charmant ! 😉 Chez Temporis Talents, nous sommes des experts pour connecter les entreprises d'ici avec des professionnels français désireux de vivre l'aventure québécoise. Notre secret ? Notre équipe est composée d'immigrants français établis au Québec. On comprend donc VRAIMENT les enjeux des deux côtés de l'Atlantique. C'est notre double culture franco-québécoise à votre service !</p>
+                <div class="force-reseau">
+                    <h3>Notre Force : Un réseau en OR en France !</h3>
+                    <ul>
+                        <li><i class="fas fa-network-wired"></i>Plus de 200 agences partenaires en France métropolitaine. Pensez-y, c'est comme avoir des yeux et des oreilles partout en France pour trouver VOTRE candidat idéal ! <a href="https://www.temporis-franchise.fr/agences" target="_blank" title="Voir nos agences partenaires en France">(voir la carte de nos partenaires <i class="fas fa-external-link-alt fa-xs"></i>)</a></li>
+                        <li><i class="fas fa-bullseye"></i>Accès privilégié aux sites d'emploi locaux français – on sait où chercher !</li>
+                        <li><i class="fas fa-brain"></i>Une connaissance pointue des bassins de talents français – on parle leur langue (littéralement et professionnellement !).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTRE SOLUTION CLÉ EN MAIN -->
+        <section id="solution" class="container">
+            <h2 class="section-title">Recruter à l'international ? Un jeu d'enfant avec notre solution CLÉ EN MAIN ! 🔑</h2>
+            <p class="text-center mb-40">Vous pensez "recrutement international = paperasse et maux de tête" ? Oubliez ça ! On s'occupe de tout pour que vous puissiez vous concentrer sur l'essentiel : accueillir votre nouveau talent.</p>
+            
+            <h3>Un Processus de Sélection aux P'tits Oignons !</h3>
+            <div class="grid-container mb-40">
+                <div class="grid-item">
+                    <i class="fas fa-crosshairs"></i>
+                    <h4>🎯 Identification précise</h4>
+                    <p>On cerne VOS besoins pour trouver le match parfait.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-user-check"></i>
+                    <h4>🕵️ Vérifications approfondies</h4>
+                    <p>Antécédents judiciaires et bancaires, pour une tranquillité d'esprit.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-comments"></i>
+                    <h4>🗣️ Entretiens & Tests</h4>
+                    <p>Évaluations et tests techniques adaptés à VOTRE secteur. Fini les mauvaises surprises !</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-folder-open"></i>
+                    <h4>📂 Dossiers de Candidature VIP</h4>
+                    <p>Complets et détaillés, pour une décision éclairée.</p>
+                </div>
+            </div>
+
+            <h3>Un Accompagnement Global, Parce qu'on ne vous lâche pas !</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <i class="fas fa-plane-departure"></i>
+                    <h4>✈️ Préparation au départ</h4>
+                    <p>Accompagnement personnalisé pour que le voyage se passe bien.</p>
+                </div>
+                 <div class="grid-item">
+                    <i class="fas fa-user-friends"></i>
+                    <h4>📜 Experts en immigration</h4>
+                    <p>Mise en relation avec nos consultants spécialisés. Les démarches administratives ? Notre affaire !</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-home"></i>
+                    <h4>🏡 Aide à la relocalisation</h4>
+                    <p>On soutient vos futurs employés ET leurs familles.</p>
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>🤝 Suivi post-installation</h4>
+                    <p>Pour une intégration réussie et durable. On est là, même après l'arrivée !</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'AVANTAGE FRANCE-QUÉBEC -->
+        <section id="avantage-fq" class="avantages-accord">
+            <div class="container">
+                <h2 class="section-title">🤫 Le Secret le Mieux Gardé : L'Accord France-Québec, Votre ALLIÉ !</h2>
+                <p class="text-center mb-40">C'est LA botte secrète qui rend le recrutement de talents français encore plus simple et avantageux. Temporis Talents maîtrise cet accord sur le bout des doigts pour vous faire gagner du temps et de l'argent !</p>
+                <div class="grid-container">
+                    <div class="card">
+                        <i class="fas fa-stamp"></i>
+                        <h4>Qualifications Reconnues !</h4>
+                        <p>Plus de 81 professions réglementées voient leurs qualifications françaises reconnues ici. Moins de tracas !</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-stopwatch"></i>
+                        <h4>Permis de Travail Express !</h4>
+                        <p>Obtention des permis de travail en seulement 4 à 12 semaines. Oui, vous avez bien lu !</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-people-arrows"></i>
+                        <h4>Mobilité Facilitée !</h4>
+                        <p>Une intégration professionnelle et sociale plus rapide et fluide.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Travailleurs Protégés !</h4>
+                        <p>Protections sociales complètes pour les talents français. Rassurant, non ?</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Objectif Résidence Permanente !</h4>
+                        <p>Une voie accélérée vers la résidence permanente, pour des talents qui restent longtemps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POURQUOI CHOISIR TEMPORIS ? -->
+        <section id="pourquoi-temporis" class="pourquoi-choisir container">
+            <h2 class="section-title">Alors, Prêt à faire le saut avec Temporis Talents ? 🚀 Voici pourquoi vous allez adorer :</h2>
+            <ol>
+                <li><strong>Expertise Biculturelle Inégalée :</strong> On parle français ET québécois. On comprend les subtilités des deux marchés du travail comme personne. C'est notre ADN !</li>
+                <li><strong>Processus Simplifié à l'Extrême :</strong> On prend en charge toutes les étapes complexes. Vous ? Vous vous détendez (presque !).</li>
+                <li><strong>Candidats Pré-Qualifiés, Prêts à S'intégrer :</strong> On vous présente des talents qui correspondent VRAIMENT et qui sont prêts pour l'aventure. Réduisez vos risques d'embauche !</li>
+                <li><strong>Accompagnement de A à Z :</strong> Du premier contact en France jusqu'à l'intégration réussie à Québec. On est votre copilote !</li>
+                <li><strong>Maîtrise des Accords Internationaux :</strong> On maximise les avantages de l'Entente France-Québec pour VOUS. C'est notre spécialité !</li>
+            </ol>
+        </section>
+
+        <!-- LE SAVIEZ-VOUS ? DÉMYSTIFICATION -->
+        <section id="demystification" class="mythes-realites">
+            <div class="container">
+                <h2 class="section-title">Le Recrutement France-Québec : On Démystifie les Idées Reçues ! 🕵️‍♀️</h2>
+                <div class="mythe">
+                    <strong>MYTHE 1 : "C'est trop compliqué et ça prend une éternité !" <i class="fas fa-hourglass-end"></i></strong>
+                </div>
+                <div class="realite">
+                    <strong>RÉALITÉ TEMPORIS TALENTS :</strong> Faux ! Grâce à l'Accord France-Québec et à notre expertise, les permis de travail peuvent être obtenus en 4-12 semaines. On s'occupe de la complexité pour vous ! <i class="fas fa-rocket" style="color: #28a745;"></i>
+                </div>
+
+                <div class="mythe">
+                    <strong>MYTHE 2 : "Les qualifications françaises ne sont pas valables ici." <i class="fas fa-times-circle"></i></strong>
+                </div>
+                <div class="realite">
+                    <strong>RÉALITÉ TEMPORIS TALENTS :</strong> Pas du tout ! L'Accord France-Québec facilite la reconnaissance mutuelle pour 81 professions réglementées. On vérifie tout pour vous ! <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                </div>
+
+                <div class="mythe">
+                    <strong>MYTHE 3 : "L'intégration culturelle sera un défi majeur." <i class="fas fa-users-slash"></i></strong>
+                </div>
+                <div class="realite">
+                    <strong>RÉALITÉ TEMPORIS TALENTS :</strong> Bien que différentes, les cultures française et québécoise partagent une langue et de nombreuses valeurs. De plus, nos candidats sont motivés et préparés. Et notre équipe, composée de Français immigrés, sait exactement comment faciliter cette transition ! <i class="fas fa-handshake" style="color: #28a745;"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPEL À L'ACTION FINAL -->
+        <section id="contact" class="container text-center">
+            <h2 class="section-title">Prêt à Résoudre vos Défis de Recrutement et à Accueillir des Talents Français Exceptionnels ?</h2>
+            <p class="mb-20">N'attendez plus que la perle rare tombe du ciel ! Contactez-nous dès aujourd'hui pour une consultation personnalisée et découvrez comment Temporis Talents peut devenir votre partenaire privilégié.</p>
+            <div class="contact-info mb-40">
+                <p><i class="fas fa-phone-alt"></i> (438) 521 30 35</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:gregoire@temporis.ca">gregoire@temporis.ca</a></p>
+            </div>
+            <a href="mailto:gregoire@temporis.ca?subject=Demande de consultation gratuite pour recrutement international" class="btn btn-lg">JE VEUX MA CONSULTATION GRATUITE !</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <img src="https://www.dropbox.com/scl/fi/02t2pk27cr51mjj57i6q0/Temporis_canda_240.png?rlkey=4ycgc17jeou99x84ba8hl9m39&st=t5tlrtx6&dl=0&raw=1" alt="Logo Temporis Talents" class="logo-footer">
+            <p><strong>Temporis Talents – Le pont entre les talents français et les opportunités québécoises.</strong></p>
+            <p>© <script>document.write(new Date().getFullYear())</script> Temporis Talents Inc. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

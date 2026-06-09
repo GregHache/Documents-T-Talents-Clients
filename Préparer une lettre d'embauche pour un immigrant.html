@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Interactif pour Lettre d'Embauche au Québec</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Corporate Red and Grey -->
+    <!-- Application Structure Plan: The application uses a sidebar navigation to switch between thematic sections (Introduction, Letter Structure, Key Points) within a single page. This task-oriented design transforms the static document into a user-friendly tool. Key interactions include: 1) Dynamic content display based on navigation clicks. 2) Clickable info-icons that trigger modals with detailed explanations, keeping the UI clean. 3) An interactive bar chart in a modal to visualize the complex topic of cost allocation. This structure was chosen to make the process of drafting a compliant job offer more manageable and intuitive. -->
+    <!-- Visualization & Content Choices: 1. Letter Structure -> Goal: Organize/Inform -> Viz: Interactive list with info-icons (HTML/CSS/JS) -> Interaction: Click icon to open a modal with details -> Justification: Provides layered, context-sensitive information without cluttering the page. 2. Immigration Costs -> Goal: Compare/Inform -> Viz: Bar Chart (Chart.js/Canvas) -> Interaction: Opens in a modal, tooltips on hover -> Justification: A visual breakdown is more effective for comparing financial responsibilities than text. 3. Key Points -> Goal: Highlight -> Viz: Styled cards with hover effects -> Interaction: Cards lift on hover -> Justification: Engages the user and emphasizes critical information. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+      :root {
+        --red-principal: #C60019;
+        --red-fonce: #A00013;
+        --gris-fonce-texte: #212529;
+        --vert-accent: #28A745;
+        --blanc-fond: #FFFFFF;
+        --gris-clair-fond-section: #F8F9FA;
+        --gris-tres-clair-bordures: #E0E0E0;
+        --gris-footer: #F0F0F0;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--gris-fonce-texte);
+        background-color: var(--gris-clair-fond-section);
+      }
+      h1, h2, h3, h4, h5, h6, .nav-link {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .nav-link.active {
+        background-color: var(--red-principal);
+        color: var(--blanc-fond);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .nav-link:hover:not(.active) {
+        background-color: var(--gris-tres-clair-bordures);
+      }
+      .float-animation {
+        transition: transform 0.3s ease-in-out;
+      }
+      .float-animation:hover {
+        transform: translateY(-4px);
+      }
+       .card-hover {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .modal {
+        transition: opacity 0.3s ease;
+      }
+      .info-icon {
+        cursor: pointer;
+        color: var(--red-principal);
+        transition: all 0.3s ease;
+        font-weight: bold;
+        border: 1px solid var(--red-principal);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .info-icon:hover {
+        background-color: var(--red-principal);
+        color: var(--blanc-fond);
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+        
+        <header class="text-center p-6 bg-white rounded-lg shadow-md mb-8">
+            <img src="https://i.imgur.com/w935pCA.png" alt="Logo T-Talents" class="mx-auto h-20 w-auto mb-4">
+            <h1 class="text-3xl md:text-4xl font-bold" style="color: var(--red-principal);">Guide de la Lettre d'Embauche</h1>
+            <p class="text-gray-600 mt-2">Outil interactif pour les entreprises québécoises recrutant à l'international</p>
+        </header>
+
+        <div class="md:flex md:space-x-8">
+
+            <aside class="w-full md:w-1/4 mb-8 md:mb-0">
+                <div class="p-4 bg-white rounded-lg shadow-md sticky top-8">
+                    <h3 class="font-bold text-lg mb-4 border-b pb-2" style="color: var(--red-principal);">Sections du Guide</h3>
+                    <nav id="navigation" class="flex flex-col space-y-2">
+                        <a href="#introduction" class="nav-link text-gray-700 font-semibold p-3 rounded-md transition-all duration-300">Introduction</a>
+                        <a href="#lettre" class="nav-link text-gray-700 font-semibold p-3 rounded-md transition-all duration-300">Structure de la Lettre</a>
+                        <a href="#points-cles" class="nav-link text-gray-700 font-semibold p-3 rounded-md transition-all duration-300">Points Clés pour les Autorités</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="w-full md:w-3/4">
+                
+                <div id="introduction" class="content-section bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4" style="color: var(--red-principal);">Introduction</h2>
+                    <p class="mb-4">Cet outil interactif vous guide, étape par étape, dans la rédaction d'une lettre d'embauche solide et conforme pour un candidat international. Une offre claire et complète est le pilier d'une démarche d'immigration réussie.</p>
+                    <p>Naviguez à travers les sections pour découvrir les éléments essentiels, les bonnes pratiques et les points de vigilance. Chaque partie de ce guide est conçue pour vous aider à construire une offre d'emploi qui répondra aux exigences des autorités canadiennes et québécoises.</p>
+                </div>
+
+                <div id="lettre" class="content-section hidden bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4" style="color: var(--red-principal);">Structure de la Lettre d'Embauche</h2>
+                    <p class="mb-6">Une lettre d'embauche pour l'immigration est un document juridique. Chaque section doit être traitée avec la plus grande précision. Cliquez sur l'icône ⓘ pour obtenir des conseils et des points de vigilance essentiels pour chaque élément.</p>
+                    <div class="space-y-3">
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Informations (Entreprise & Candidat)</span> <span class="info-icon" data-modal-target="modal-info">i</span></div>
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Description du Poste</span> <span class="info-icon" data-modal-target="modal-poste">i</span></div>
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Conditions d'Emploi (Salaire, etc.)</span> <span class="info-icon" data-modal-target="modal-conditions">i</span></div>
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Avantages Sociaux & Soutien</span> <span class="info-icon" data-modal-target="modal-avantages">i</span></div>
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Frais d'Immigration</span> <span class="info-icon" data-modal-target="modal-frais">i</span></div>
+                        <div class="p-3 border rounded-md flex justify-between items-center" style="border-color: var(--gris-tres-clair-bordures);"><span class="font-semibold">Conditions Particulières & Signature</span> <span class="info-icon" data-modal-target="modal-final">i</span></div>
+                    </div>
+                </div>
+
+                <div id="points-cles" class="content-section hidden bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4" style="color: var(--red-principal);">Points Clés pour les Autorités</h2>
+                    <p class="mb-6">Pour que votre offre soit acceptée sans encombre, les agents d'immigration porteront une attention particulière aux points suivants. Assurez-vous que votre lettre est irréprochable sur ces aspects.</p>
+                     <div class="grid md:grid-cols-2 gap-4">
+                        <div class="card-hover p-4 rounded-lg border" style="border-color: var(--gris-tres-clair-bordures); background-color: var(--gris-clair-fond-section);">
+                            <h4 class="font-bold text-lg mb-2">Clarté et Précision</h4>
+                            <p class="text-sm">Aucune place à l'ambiguïté. Le poste, le salaire et les conditions doivent être limpides.</p>
+                        </div>
+                        <div class="card-hover p-4 rounded-lg border" style="border-color: var(--gris-tres-clair-bordures); background-color: var(--gris-clair-fond-section);">
+                            <h4 class="font-bold text-lg mb-2">Conformité Salariale</h4>
+                            <p class="text-sm">Le salaire doit correspondre aux médianes du poste au Québec. Utilisez le Guichet-Emplois pour vérifier.</p>
+                        </div>
+                        <div class="card-hover p-4 rounded-lg border" style="border-color: var(--gris-tres-clair-bordures); background-color: var(--gris-clair-fond-section);">
+                            <h4 class="font-bold text-lg mb-2">Engagement de l'Employeur</h4>
+                            <p class="text-sm">Votre soutien (frais, intégration) démontre le sérieux de l'offre et est un facteur très positif.</p>
+                        </div>
+                        <div class="card-hover p-4 rounded-lg border" style="border-color: var(--gris-tres-clair-bordures); background-color: var(--gris-clair-fond-section);">
+                            <h4 class="font-bold text-lg mb-2">Condition suspensive</h4>
+                            <p class="text-sm">Il est obligatoire de mentionner que l'offre est conditionnelle à l'obtention des permis.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="text-center mt-12 p-6 rounded-lg" style="background-color: var(--gris-footer);">
+            <p class="text-sm text-gray-600">&copy; 2025 T-Talents. Tous droits réservés.</p>
+            <p class="text-xs text-gray-500 mt-1">Ce document est un guide et doit être adapté à chaque situation spécifique.</p>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-info" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Informations Essentielles</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm"><li><strong>Entreprise :</strong> Dénomination sociale complète, adresse du siège, nom du représentant, et **le logo de l'entreprise doit figurer sur la lettre**.</li><li><strong>Candidat :</strong> Nom complet (comme sur le passeport), titre exact du poste et adresse précise du lieu de travail.</li></ul>
+            <button class="modal-close mt-6 float-animation bg-red-600 text-white px-4 py-2 rounded" style="background-color: var(--red-principal);">Fermer</button>
+        </div>
+    </div>
+    <div id="modal-poste" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Description du Poste</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm"><li><strong>Fonctions :</strong> Soyez très détaillé. Les tâches doivent correspondre au code CNP (Classification Nationale des Professions) du poste et justifier le recrutement.</li><li><strong>Date d'entrée :</strong> Toujours préciser "sous réserve de l'obtention des autorisations de travail". Ceci vous protège légalement.</li></ul>
+            <button class="modal-close mt-6 float-animation" style="background-color: var(--red-principal); color: white; padding: 8px 16px; border-radius: 5px;">Fermer</button>
+        </div>
+    </div>
+    <div id="modal-conditions" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Conditions d'Emploi</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm"><li><strong>Durée :</strong> Pour un permis temporaire, la durée doit correspondre (ex: 2 ans).</li><li><strong>Horaire :</strong> Précisez le nombre d'heures par semaine (ex: 40h/semaine).</li><li><strong>Salaire :</strong> Indiquez un montant précis ($/heure ou $/année). Il doit être conforme au salaire médian en vigueur pour la profession et la région au Québec.</li></ul>
+            <button class="modal-close mt-6 float-animation" style="background-color: var(--red-principal); color: white; padding: 8px 16px; border-radius: 5px;">Fermer</button>
+        </div>
+    </div>
+    <div id="modal-avantages" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Avantages et Soutien</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm"><li><strong>Avantages sociaux :</strong> Détaillez les assurances (admissibilité, couverture, partage des coûts), les vacances et les REER. C'est un signe de stabilité pour l'agent d'immigration.</li><li><strong>Soutien à l'intégration :</strong> L'aide à la recherche de logement ou le soutien administratif sont des plus très appréciés qui renforcent votre dossier.</li></ul>
+            <button class="modal-close mt-6 float-animation" style="background-color: var(--red-principal); color: white; padding: 8px 16px; border-radius: 5px;">Fermer</button>
+        </div>
+    </div>
+    <div id="modal-frais" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Frais d'Immigration</h3>
+            <p class="font-semibold text-sm">La transparence est capitale. Listez précisément ce que l'employeur couvre vs ce qui reste à la charge du candidat.</p>
+            <div class="mt-4 chart-container relative h-48 md:h-64 max-w-full mx-auto">
+                <canvas id="immigrationFeesChart"></canvas>
+            </div>
+            <button class="modal-close mt-6 float-animation" style="background-color: var(--red-principal); color: white; padding: 8px 16px; border-radius: 5px;">Fermer</button>
+        </div>
+    </div>
+    <div id="modal-final" class="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden opacity-0 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-lg w-full relative">
+            <h3 class="text-xl font-bold mb-4" style="color:var(--red-principal);">Clauses Finales</h3>
+            <ul class="list-disc list-inside space-y-2 text-sm"><li><strong>Offre Conditionnelle :</strong> C'est la clause la plus importante. L'emploi ne commence qu'après l'obtention de TOUTES les autorisations légales de travail. Cette phrase doit figurer mot pour mot.</li><li><strong>Signature :</strong> La lettre doit être signée par un représentant autorisé de l'entreprise et par le candidat pour marquer son acceptation.</li></ul>
+            <button class="modal-close mt-6 float-animation" style="background-color: var(--red-principal); color: white; padding: 8px 16px; border-radius: 5px;">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            let chartInstance = null;
+            
+            function updateActiveState(hash) {
+                const targetHash = hash || window.location.hash || '#introduction';
+                
+                contentSections.forEach(section => {
+                    section.classList.toggle('hidden', '#' + section.id !== targetHash);
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === targetHash);
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetHash = this.getAttribute('href');
+                    if(window.location.hash !== targetHash) {
+                       window.history.pushState(null, null, targetHash);
+                    }
+                    updateActiveState(targetHash);
+                });
+            });
+
+            window.addEventListener('popstate', () => updateActiveState(window.location.hash));
+            updateActiveState(window.location.hash);
+
+            const modals = document.querySelectorAll('.modal');
+            const infoIcons = document.querySelectorAll('.info-icon');
+            const closeButtons = document.querySelectorAll('.modal-close');
+
+            const openModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+
+                if (modalId === 'modal-frais' && !chartInstance) {
+                    createChart();
+                }
+            };
+
+            const closeModal = (modal) => {
+                if (!modal || modal.classList.contains('hidden')) return;
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            };
+
+            infoIcons.forEach(icon => {
+                icon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openModal(icon.dataset.modalTarget);
+                });
+            });
+
+            closeButtons.forEach(button => button.addEventListener('click', () => closeModal(button.closest('.modal'))));
+            modals.forEach(modal => modal.addEventListener('click', (e) => e.target === modal && closeModal(modal)));
+            document.addEventListener('keydown', (e) => e.key === "Escape" && modals.forEach(modal => closeModal(modal)));
+
+            function createChart() {
+                if (chartInstance) {
+                    chartInstance.destroy();
+                }
+                const ctx = document.getElementById('immigrationFeesChart').getContext('2d');
+                chartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Frais d\'Immigration (Exemple)'],
+                        datasets: [{
+                            label: 'Part Employeur',
+                            data: [2500],
+                            backgroundColor: 'rgba(198, 0, 25, 0.8)',
+                        }, {
+                            label: 'Part Candidat',
+                            data: [1500],
+                            backgroundColor: 'rgba(33, 37, 41, 0.7)',
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        scales: {
+                            x: { stacked: true, ticks: { callback: value => value + '$' } },
+                            y: { stacked: true }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: 'Répartition Typique des Coûts', font: { family: "'Montserrat', sans-serif" } },
+                            tooltip: {
+                                callbacks: {
+                                    label: context => `${context.dataset.label || ''}: ${new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD' }).format(context.parsed.x)}`
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

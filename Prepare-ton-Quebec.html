@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prépare ton Québec - Temporis Montréal</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Open Sans for body text, Montserrat for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Colors */
+        :root {
+            --primary-red: #C60019;
+            --dark-red: #A00013;
+            --dark-gray-text: #212529;
+            --accent-green: #28A745;
+            --white-bg: #FFFFFF;
+            --light-gray-section: #F8F9FA;
+            --very-light-gray-border: #E0E0E0;
+            --footer-gray: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--footer-gray); /* Gris footer */
+            color: var(--dark-gray-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--white-bg);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, .subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-red); /* Rouge principal for headings */
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .header-section, .footer-section {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .header-logo, .footer-logo {
+            max-width: 250px; /* Increased size for new logo */
+            height: auto;
+            margin: 0 auto 1rem;
+        }
+        /* General section title styling */
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700; /* Montserrat bold */
+            color: var(--primary-red);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--very-light-gray-border); /* Gris très clair */
+            padding-bottom: 0.5rem;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center content horizontally */
+            text-align: center; /* Ensure text is centered if it wraps */
+        }
+        /* Specific styling for the title that previously had a flag */
+        .section-title-main { /* Renamed from .section-title-with-flag */
+            font-size: 1.75rem;
+            font-weight: 700; /* Montserrat bold */
+            color: var(--primary-red);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--very-light-gray-border);
+            padding-bottom: 0.5rem;
+            text-align: center; /* Center the text */
+        }
+        .section-title .flag-icon { /* Removed this rule as flag is moved */
+            display: none;
+        }
+        .subsection-title {
+            font-size: 1.25rem;
+            font-weight: 600; /* Montserrat semi-bold */
+            color: var(--primary-red); /* Using primary red for subtitles too */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .note-box {
+            border: 1px solid var(--accent-green); /* Vert accent border */
+            background-color: #e6ffe6; /* Lighter green background for notes */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+            color: var(--dark-gray-text);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+            transition: all 0.3s ease-in-out; /* For lift effect */
+        }
+        .note-box:hover {
+            transform: translateY(-5px); /* Lift effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            background-color: var(--light-gray-section); /* Gris clair for contact info */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        }
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            color: var(--dark-gray-text);
+        }
+        .contact-info a {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button float effect */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px); /* Float effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Menu hover effect (added a simple nav for demonstration) */
+        .navbar-link, .sommaire-link {
+            padding: 0.5rem 1rem;
+            color: var(--dark-gray-text);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+        .navbar-link::after, .sommaire-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+        .navbar-link:hover::after, .sommaire-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .navbar-link:hover, .sommaire-link:hover {
+            color: var(--primary-red);
+        }
+
+        /* Styling for the new GOLD logo image */
+        .gold-logo {
+            max-height: 40px; /* Adjust height as needed */
+            width: auto;
+            margin-right: 0.5rem; /* Space between logo and text */
+        }
+
+        /* Styling for partner logos - Equalized size */
+        .partner-logo {
+            width: 120px; /* Fixed width */
+            height: 60px; /* Fixed height */
+            object-fit: contain; /* Ensures the image fits within the dimensions without distortion */
+            margin: 1rem; /* Space around logos */
+        }
+
+        /* Specific style for enlarged Reloc Québec logo */
+        .reloc-quebec-logo {
+            width: 150px; /* Larger fixed width */
+            height: 75px; /* Larger fixed height */
+            object-fit: contain;
+            margin: 1rem;
+        }
+        /* Style for Air Canada logo */
+        .air-canada-logo {
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+            object-fit: contain;
+            margin: 1rem;
+        }
+        /* New style for Desjardins logo to make it larger */
+        .desjardins-logo {
+            width: 180px; /* Even larger fixed width */
+            height: 90px; /* Even larger fixed height */
+            object-fit: contain;
+            margin: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+                border-radius: 0.75rem;
+            }
+            .header-logo, .footer-logo {
+                max-width: 200px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            .section-title, .section-title-main {
+                font-size: 1.5rem;
+            }
+            .subsection-title {
+                font-size: 1.1rem;
+            }
+            .contact-info p {
+                font-size: 1rem;
+            }
+            .partner-logo, .reloc-quebec-logo, .air-canada-logo, .desjardins-logo {
+                width: 100px; /* Smaller fixed width for mobile */
+                height: auto;
+            }
+            .checklist-table th, .checklist-table td {
+                padding: 0.5rem; /* Adjust padding for smaller screens */
+                font-size: 0.9rem; /* Smaller font size */
+            }
+        }
+
+        /* Styles for the flag after the main title */
+        .flag-after-title {
+            display: block; /* Make it a block element to center */
+            margin: 1rem auto 2rem auto; /* Center it and add vertical spacing */
+            max-width: 150px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* Styles for the main section title (I. AVANT LE DÉPART) - no longer needs flag container */
+        .main-section-title-container {
+            border-bottom: 2px solid var(--very-light-gray-border);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: left; /* Align text to the left */
+        }
+        .main-section-title-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin: 0; /* Remove default margin from h2 */
+        }
+
+
+        /* Sommaire specific styling */
+        .sommaire ul {
+            list-style: none; /* Remove default bullet points */
+            padding-left: 0;
+        }
+        .sommaire ul li {
+            margin-bottom: 0.75rem;
+        }
+        .sommaire ul li strong {
+            display: block; /* Make main sections block-level for better spacing */
+            margin-bottom: 0.5rem;
+        }
+        .sommaire ul ul {
+            padding-left: 1.5rem; /* Indent sub-sections */
+            list-style-type: none; /* Remove default bullet points for sub-sections */
+        }
+        .sommaire ol {
+            padding-left: 1.5rem; /* Indent ordered lists */
+        }
+        .sommaire-link {
+            display: inline-block; /* Make links block-level for better click area */
+            padding: 0.2rem 0;
+            width: 100%;
+        }
+
+        /* Checklist table styling */
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+        .checklist-table th, .checklist-table td {
+            border: 1px solid var(--very-light-gray-border);
+            padding: 1rem;
+            text-align: left;
+        }
+        .checklist-table th {
+            background-color: var(--primary-red);
+            color: var(--white-bg);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-align: center; /* Center headers */
+        }
+        .checklist-table tr:nth-child(even) {
+            background-color: var(--light-gray-section); /* Alternate row background */
+        }
+        .checklist-table td:last-child {
+            text-align: center; /* Center checkbox column */
+        }
+        .checklist-table input[type="checkbox"] {
+            transform: scale(1.5); /* Make checkbox larger */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <img src="https://i.imgur.com/MuXNsBR.png" alt="Logo Temporis Talents" class="header-logo">
+            <p class="text-gray-600">Agence internationale de recrutement</p>
+            <h1 class="text-4xl font-extrabold mt-4 mb-2">PRÉPARE TON QUÉBEC !</h1>
+            <!-- Moved Quebec Flag Image -->
+            <img src="https://i.imgur.com/RLWx1P9.jpeg" alt="Drapeau du Québec" class="flag-after-title">
+            <p class="text-lg font-semibold" style="color: var(--primary-red);">Édition 2026 - Guide à jour pour réussir votre installation</p>
+            <p class="text-sm text-gray-500">Agence - 555 Chabanel Ouest - Suite 1500, Montréal, Qc, H2N 2J2</p>
+            <p class="text-sm text-gray-500">Tel - 514-849-5151</p>
+            <div class="flex justify-center items-center mt-4">
+                <img src="https://i.imgur.com/pcY0F2g.png" alt="Notation GOLD Ecovadis" class="gold-logo">
+                <span class="text-gray-500 text-sm">2020 ecovadis Sustainability Rating</span>
+            </div>
+            <p class="text-xs text-gray-400 mt-2">Permis d'agence de recrutement de travailleurs étrangers temporaires - AR-2303087</p>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Simple Navigation -->
+        <nav class="flex justify-center space-x-6 py-4">
+            <a href="#avant-le-depart-section" class="navbar-link">Avant le départ</a>
+            <a href="#a-votre-arrivee-section" class="navbar-link">À votre arrivée</a>
+            <a href="#annexes-section" class="navbar-link">Annexes</a>
+            <a href="#contact" class="navbar-link">Contact</a>
+        </nav>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Introduction Section -->
+        <section class="mb-8">
+            <p>Vous avez un projet ambitieux, celui de venir vivre au Québec. Vous souhaitez relever le Défi et vous avez choisi notre équipe pour vous y accompagner.</p>
+            <p>À travers ce guide, l'équipe Temporis vous accompagne pour penser à tout avant votre départ et vous préparer au mieux à traverser l'Atlantique.</p>
+            <p>Il a été réalisé par nos collaborateurs qui ont eux-mêmes vécu l'expérience de l'immigration.</p>
+            <p>Bien sûr il y aura des surprises car tout maîtriser est assez utopique, mais c'est aussi ça s'embarquer dans une nouvelle aventure!</p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/yjtxLhi.jpeg" alt="Image d'introduction">
+            </div>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Sommaire Section -->
+        <section class="sommaire mb-8">
+            <h2 class="section-title">SOMMAIRE</h2>
+            <div class="flex">
+                <div class="w-1/2 pr-4">
+                    <ul>
+                        <li><strong><a href="#avant-le-depart-section" class="sommaire-link">I. AVANT LE DÉPART</a></strong>
+                            <ul>
+                                <li><a href="#cest-quoi-le-quebec-subsection" class="sommaire-link">A. C'est quoi le Québec ?</a>
+                                    <ol>
+                                        <li><a href="#carte-identite-subsection" class="sommaire-link">Carte d'identité</a></li>
+                                        <li><a href="#parlez-vous-francais-subsection" class="sommaire-link">Parlez-vous français ?</a></li>
+                                        <li><a href="#vie-quotidienne-subsection" class="sommaire-link">Vie quotidienne</a></li>
+                                        <li><a href="#sources-officielles-subsection" class="sommaire-link">Sources officielles</a></li>
+                                    </ol>
+                                </li>
+                                <li><a href="#se-preparer-immigrer-subsection" class="sommaire-link">B. Se préparer à immigrer</a>
+                                    <ol>
+                                        <li><a href="#documents-identite-subsection" class="sommaire-link">Documents d'identité</a></li>
+                                        <li><a href="#examens-medicaux-subsection" class="sommaire-link">Examens médicaux</a></li>
+                                        <li><a href="#assurance-maladie-subsection" class="sommaire-link">L'assurance maladie</a></li>
+                                        <li><a href="#budget-immigrer-subsection" class="sommaire-link">Budget pour immigrer</a></li>
+                                        <li><a href="#demenagement-subsection" class="sommaire-link">Déménagement</a></li>
+                                        <li><a href="#cout-vie-subsection" class="sommaire-link">Coût de la vie</a></li>
+                                        <li><a href="#cout-installation-subsection" class="sommaire-link">Prévoir le coût de votre installation</a></li>
+                                        <li><a href="#voyage-avion-subsection" class="sommaire-link">Voyage en avion</a></li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-1/2 pl-4">
+                    <ul>
+                        <li><strong><a href="#a-votre-arrivee-section" class="sommaire-link">II. À VOTRE ARRIVÉE</a></strong>
+                            <ul>
+                                <li><a href="#demarches-1ers-jours-subsection" class="sommaire-link">A. Les démarches des 1ers jours</a>
+                                    <ol>
+                                        <li><a href="#nas-subsection" class="sommaire-link">Le Numéro d'Assurance Sociale au Québec</a></li>
+                                        <li><a href="#compte-bancaire-subsection" class="sommaire-link">L'ouverture du compte en banque</a></li>
+                                        <li><a href="#ramq-arrivee-subsection" class="sommaire-link">La RAMQ</a></li>
+                                        <li><a href="#permis-conduire-arrivee-subsection" class="sommaire-link">Le permis de conduire</a></li>
+                                        <li><a href="#consulat-arrivee-subsection" class="sommaire-link">S'immatriculer au consulat</a></li>
+                                        <li><a href="#ecoles-arrivee-subsection" class="sommaire-link">Inscription aux écoles</a></li>
+                                    </ol>
+                                </li>
+                                <li><a href="#documents-necessaires-arrivee-subsection" class="sommaire-link">B. Liste des documents nécessaires</a></li>
+                            </ul>
+                        </li>
+                        <li><strong><a href="#annexes-section" class="sommaire-link">III. ANNEXES</a></strong>
+                            <ul>
+                                <li><a href="#checklist-subsection" class="sommaire-link">Checklist, lexique, conseils pratiques</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Section I: Avant le départ -->
+        <section id="avant-le-depart-section" class="mb-8">
+            <div class="main-section-title-container">
+                <h2>I. AVANT LE DÉPART</h2>
+            </div>
+
+            <h3 id="cest-quoi-le-quebec-subsection" class="subsection-title">A. C'est quoi le Québec ?</h3>
+            <p>Changer de pays n'est pas anodin, il faut se préparer à découvrir et s'intégrer à une nouvelle culture. Le meilleur moyen pour s'intégrer est avant tout de s'intéresser à elle! Temporis vous propose une présentation du Québec:</p>
+
+            <h4 id="carte-identite-subsection" class="text-lg font-semibold mb-2">1. Carte d'identité du Québec</h4>
+            <p>Le Canada est composé de 10 provinces et de 3 territoires. Le Québec est l'une des provinces du Canada.</p>
+            <div class="image-container">
+                <img src="https://i.imgur.com/Gobfr3x.jpeg" alt="Image de la Carte du Canada et du Québec">
+            </div>
+            <p class="font-bold">Le Québec:</p>
+            <ul>
+                <li>Superficie: 1 542 056 km²</li>
+                <li>Population: 9 033 887 (estimation officielle de Statistique Canada - Janvier 2026)</li>
+                <li>Capitale: Québec</li>
+                <li>Ville la plus peuplée: Montréal</li>
+                <li>Langue officielle : Français</li>
+                <li>Monnaie: Dollar canadien (CAD)</li>
+                <li>Devise : « Je me souviens »</li>
+                <li>Régime: Démocratie parlementaire canadienne</li>
+            </ul>
+
+            <h4 id="parlez-vous-francais-subsection" class="text-lg font-semibold mb-2 mt-6">2. Parlez-vous français ?</h4>
+            <p>Au Québec, 94% de la population parle français. Depuis la Loi 96 (2022), l'utilisation du français augmente en administration, santé, éducation, entreprises. L'anglais reste courant à Montréal, mais ne suffit pas pour l'intégration et l'emploi stable. La maîtrise du français est obligatoire pour praticité et conformité.</p>
+            <div class="note-box">
+                <p class="font-bold">AU QUÉBEC, IL FAIT -30 DEGRÉS L'HIVER, ET 30 DEGRÉS L'ÉTÉ,</p>
+                <p class="font-bold">PRÉVOYEZ UNE GARDE-ROBE VARIÉE !</p>
+            </div>
+
+            <h4 id="vie-quotidienne-subsection" class="text-lg font-semibold mb-2 mt-6">3. La vie quotidienne au Québec</h4>
+            <p>Respect, politesse et tutoiement sont habituels.</p>
+            <p>La plupart des problèmes peuvent se régler avec un sourire et sans hausser le ton. Comparer sa ville d'accueil avec sa ville d'origine pourrait être ressenti comme une critique. Le Québec prône des valeurs du vivre-ensemble et de l'interculturel, à savoir que chacun est invité à s'intégrer dans la société en respectant des valeurs communément établies.</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">• Le Tutoiement</h5>
+            <p>Il fait partie des mœurs du Québec. Il s'établit en fonction de l'âge et de la fonction sociale. Vouvoyer quelqu'un est souvent vu comme un besoin d'afficher un certain respect. Les gens de même génération se tutoient, tout comme les personnes de moins de 30 ans. Il n'est pas rare qu'un employé du service public tutoie son interlocuteur, ou un employé son patron. Cependant, ne confondez pas le tutoiement avec une envie de nouer amitié, c'est juste une manière d'être typiquement nord-américaine.</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">• Le Politiquement correct</h5>
+            <p>Au Québec, le politiquement correct est de mise dans les rencontres sociales. Souvent difficile à comprendre pour un nouvel arrivant, ce mélange de retenue, d'idées simples, de thèmes fédérateurs et de sourires faciles alimentera pourtant vos premières discussions avec les habitants de la province, de votre voisin à votre collègue de bureau. Il ne faut surtout pas prendre cela pour de l'hypocrisie ou un manque d'intérêt pour vous, mais plus comme un respect de vos idées et de votre espace vital.</p>
+            <p>Ce n'est qu'après avoir gagné la confiance des Québécois que vous pourrez avoir des discussions plus profondes, plus animées. De façon générale, les Québécois évitent la controverse, surtout en public.</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">• L'amitié à la québécoise</h5>
+            <p>Vous pourriez être surpris au premier abord par l'ouverture et la cordialité des Québécois à ne pas confondre avec de l'amitié. L'amitié se vit différemment, on se retrouve davantage à l'extérieur qu'autour d'un repas à la maison. Et attention, si vous assistez à une « party » (une fête), chacun ramène ses consommations et ne vous avisez pas de consommer la bière du voisin, ce serait mal vu!</p>
+            <p>Pour se saluer, mieux vaut se serrer la main plutôt que se faire la bise et entre amis proches les hugs (câlins) sont très fréquents.</p>
+            <p class="font-bold mt-4">Fêtes 2026 (calendrier officiel fédéral/provincial):</p>
+            <ul>
+                <li>1er janvier (Jour de l'An)</li>
+                <li>3 avril (Vendredi saint)</li>
+                <li>6 avril (Lundi de Pâques)</li>
+                <li>18 mai (Journée nationale des patriotes)</li>
+                <li>24 juin (Saint-Jean-Baptiste, férié uniquement au Québec)</li>
+                <li>1er juillet (Fête du Canada)</li>
+                <li>7 septembre (Fête du Travail)</li>
+                <li>12 octobre (Action de Grâce)</li>
+                <li>25 décembre (Noël)</li>
+            </ul>
+            <p>Commerces principalement ouverts 7j/7 sauf exceptions.</p>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Section I.B: Préparer votre immigration -->
+        <section class="mb-8">
+            <h3 id="sources-officielles-subsection" class="subsection-title">B. Se préparer à immigrer</h3>
+
+            <h4 class="text-lg font-semibold mb-2">1. Les sources officielles d'information</h4>
+            <p>L'immigration est un engagement qui vous demandera de l'investissement personnel et financier au risque de compromettre votre arrivée. Temporis vous présente les acteurs essentiels vers qui vous tourner pour vos démarches et vos questions:</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">Ministère de l'Immigration, de la Francisation et Intégration (MIFI)</h5>
+            <p>Informations, formulaires, accompagnement officiel. (514-864-9191 ou 1-877-864-9191)</p>
+            <p>Avant de téléphoner, prenez soin de consulter le site Internet.</p>
+            <div class="note-box">
+                <p class="font-bold">60% DES OURS POLAIRES VIVENT AU CANADA,</p>
+                <p class="font-bold">SOYEZ PRUDENT SI VOUS VISITEZ LE GRAND NORD</p>
+            </div>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">Immigration, Réfugiés et Citoyenneté Canada (IRCC)</h5>
+            <p>Permis, visas, résidence permanente, démarches fédérales. (1-888-242-2100)</p>
+            <p>Notez que le CSQ n'est pas un visa ou un permis de travail ou d'études. Sa détention ne vous permet pas d'entrer au Canada.</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">Consulat France (Montréal)</h5>
+            <p>Si besoin de soutien, inscription.</p>
+            <p>Toujours consulter les sites gouvernementaux avant toute démarche.</p>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">Les professionnels en immigration</h5>
+            <p>Si vous décidez de retenir les services d'un représentant - consultant, avocat, etc. Sachez que le ministère de l'Immigration, de la Francisation et intégration (MIFI) ne traite qu'avec des professionnels reconnus et inscrits au registre du MIFI. Temporis a sélectionné pour vous des cabinets reconnus avec qui l'agence travaille en étroite collaboration pour vos démarches et questions en immigration.</p>
+            <div class="flex justify-center items-center gap-4 mt-4">
+                <img src="https://i.imgur.com/Zsx0med.png" alt="Logo KBS Immigration" class="partner-logo" style="width: 180px; height: auto; max-height: 80px;">
+            </div>
+
+            <h4 id="se-preparer-immigrer-subsection" class="text-lg font-semibold mb-2 mt-6">2. Se préparer à immigrer</h4>
+            <p class="italic">"Une immigration réussie commence par l'anticipation!"</p>
+
+            <h5 id="documents-identite-subsection" class="text-md font-semibold mb-1 mt-4">• Documents d'identités</h5>
+            <p>Ayez toutes vos pièces d'identité à jour avant le départ, notamment votre Passeport.</p>
+            <p>Un permis de travail ou d'études sera lié à la durée du passeport. De même, le passeport devra être valide lors de la demande de résidence permanente.</p>
+            <p>Exemple: Nous sommes le 1er Juillet 2026, vous avez obtenu un Permis de travail temporaire valable pour 2 ans, vous autorisant à venir au Canada.</p>
+            <p>Si la date d'expiration de votre passeport est au 31 décembre 2026, Les autorités d'immigration vous délivreront un visa dont la durée maximale sera jusqu'au 31 décembre 2026, soit six mois.</p>
+            <p>Nous vous conseillons donc de partir avec un passeport qui a une validité minimum de 5 ans sinon essayez de le refaire avant de partir.</p>
+            <div class="note-box">
+                <p class="font-bold">AU CANADA, ON SE PÈSE SURTOUT EN LIVRES.</p>
+                <p class="font-bold">NE SURSAUTEZ PAS LORSQUE LES CHIFFRES APPARAÎTRONT SUR LA BALANCE, VOTRE POIDS N'A PAS SOUDAINEMENT DOUBLÉ!</p>
+            </div>
+
+            <h5 id="examens-medicaux-subsection" class="text-md font-semibold mb-1 mt-4">• Examens médicaux</h5>
+            <p>Soyez à jour dans vos examens médicaux : dentiste, ophtalmologiste, lunettes, etc. (…)</p>
+            <p>Il est important de savoir qu’à votre arrivée, vous pourriez être soumis à un délai de carence de trois mois avant d’être admissibles au régime d’assurance maladie du Québec. Il vous faudra alors payer les services de santé pendant cette période ou vous procurer une assurance privée.</p>
+            <p>Quelques exemples de frais médicaux</p>
+            <ul>
+                <li>Honoraires d’examen non assuré................................................................. 70$ à 230$</li>
+                <li>Intervention thérapeutique ou diagnostique non assurée (Réparation de plaie, réduction, immobilisation) ............................. 70$ à ...</li>
+            </ul>
+            <p>Aucune dispense, sauf situation spécifique.</p>
+
+            <h5 id="assurance-maladie-subsection" class="text-md font-semibold mb-1 mt-4">• L'assurance maladie & RAMQ</h5>
+            <p>Veillez à bien informer l'administration de votre déménagement à l'étranger.</p>
+            <p>En ce qui concerne CPAM, vous devez les informer de votre changement de pays de résidence afin d'éviter le délai de carence de 3 mois en arrivant au Québec grâce aux accords France/Québec.</p>
+            <p>Dès que possible, Il vous faut obtenir l’attestation de cotisation de votre caisse primaire.</p>
+            <p>Pour cela, vous devez compléter le CERFA de demande de changement de pays de résidence.</p>
+            <p>Ainsi, la CPAM vous transmettra en fonction de votre situation :</p>
+            <ul>
+                <li>le formulaire SE 401 Q 207 pour les travailleurs temporaires</li>
+                <li>le formulaire SE 401 Q 106 OU SE 401 Q 102 pour les étudiants (+16 ans) selon le type d’études.</li>
+            </ul>
+            <p>Vous pouvez aussi consulter le site de http://cleiss.fr/particuliers/index.html</p>
+            <p>Carence 3 mois toujours en vigueur sauf conventions internationales.</p>
+            <p>Assurance privée obligatoire pendant la carence.</p>
+            <p>Offres « nouveaux arrivants » à partir de 60 $/mois.</p>
+
+            <h5 id="budget-immigrer-subsection" class="text-md font-semibold mb-1 mt-4">• Le budget pour immigrer</h5>
+            <ul>
+                <li>Visiteur: 2 800 $/mois/personne</li>
+                <li>Étudiant: 13 134 $/an (adulte, + 4 500 $/personne à charge)</li>
+                <li>Travailleur: preuve de fonds pour 3-6 mois (4 000 $ minimum pour un célibataire, 8 000 $+ pour une famille)</li>
+            </ul>
+            <p>Fonds à disposition immédiate (pas d'actif immobilisé).</p>
+            <p>Relevés bancaires, attestations d'employeur, promesses d'hébergement = indispensables.</p>
+            <p>Fausses déclarations = refus ou interdiction d'entrée.</p>
+
+            <h5 id="demenagement-subsection" class="text-md font-semibold mb-1 mt-4">• Le déménagement</h5>
+            <p>Des sociétés spécialisées peuvent se charger de cette étape longue et fastidieuse.</p>
+            <p>Si vous faites partir des meubles et cartons par container, il faut prévoir 6 à 8 semaines avant leur arrivée au Canada.</p>
+            <p>Vous aurez besoin de liste en double exemplaire pour :</p>
+            <ul>
+                <li>Tous les biens et effets personnels que vous apporterez avec vous (vos valises pendant le voyage)</li>
+                <li>Tous ceux qui arriveront par la suite (votre container qui est sur le bateau) avec une valeur approximative.</li>
+            </ul>
+            <p>Ces listes sont obligatoires et vous seront demandées à l’immigration et ensuite aux douanes pour récupérer votre container.</p>
+            <p>Certains biens interdits: armes, plantes, denrées fraîches, certains médicaments.</p>
+            <p>Attestation de santé et vaccination pour animaux de compagnie.</p>
+            <p>Pour vous accompagner au mieux, nous nous accompagnons de partenaires de choix :</p>
+            <div class="flex flex-wrap justify-center items-start gap-4 mt-4">
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <img src="https://i.imgur.com/mh68M4M.png" alt="Image du Logo Reloc Québec" class="reloc-quebec-logo">
+                    <p class="text-sm mt-2">Reloc Québec offre un accompagnement complet et personnalisé à chaque étape d’une relocalisation au Québec, incluant préparation, recherche de logement, installation et aide à l’intégration culturelle ou professionnelle, pour particuliers ou entreprises (<a href="https://relocquebec.com/" target="_blank" class="text-blue-600 hover:underline">https://relocquebec.com/</a>).</p>
+                </div>
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <img src="https://i.imgur.com/gVtEmgQ.png" alt="Image du Logo Halo Relocation" class="partner-logo">
+                    <p class="text-sm mt-2">Halo Relocation accompagne expatriés et entreprises pour une installation sur mesure à Montréal, couvrant démarches administratives, emploi, logement et intégration, avec un service personnalisé et une forte expertise sur le terrain (<a href="https://www.haloagence.com/" target="_blank" class="text-blue-600 hover:underline">https://www.haloagence.com/</a>).</p>
+                </div>
+                <div class="flex flex-col items-center text-center max-w-xs">
+                    <img src="https://i.imgur.com/083OQWl.png" alt="Image du Logo Direct Déménagement" class="partner-logo">
+                    <p class="text-sm mt-2">Direct Déménagement est un spécialiste du déménagement international entre la France et le Canada, gérant toutes les étapes logistiques, du devis au suivi du conteneur, avec des solutions adaptées à chaque besoin (<a href="https://directdemenagement.com/" target="_blank" class="text-blue-600 hover:underline">https://directdemenagement.com/</a>).</p>
+                </div>
+            </div>
+
+            <h4 id="cout-vie-subsection" class="text-lg font-semibold mb-2 mt-6">3. Le coût de la vie au Québec en 2026</h4>
+            <p class="font-bold">Les grands postes de dépenses</p>
+            <p>Les principaux frais qu’il faut prévoir sont le logement, la nourriture, la téléphonie, le transport, et les sorties et loisirs.</p>
+            <p>Le prix des loyers varie grandement d’une situation géographique à l'autre. Par exemple, à Montréal les prix sont plus dispendieux qu'à Trois-Rivières. Les villes situées en région sont bien plus abordables.</p>
+            <p>Aux loyers s’ajoutent les frais d’électricité et de chauffage. Sachez que l'électricité est bien moins chère. En effet, plus de 99 % de cette production est d'origine renouvelable, notamment à partir des capacités hydrauliques du Québec.</p>
+            
+            <h5 class="text-md font-semibold mb-1 mt-4">Salaire minimum (au 1er mai 2026)</h5>
+            <ul>
+                <li>Taux horaire général : 16,60 $ / heure</li>
+            </ul>
+
+            <h5 class="text-md font-semibold mb-1 mt-4">Logement (Laval et Montréal)</h5>
+            <ul>
+                <li>Studio: 900-1 200 $/mois</li>
+                <li>2 chambres: 1 400-2 100 $/mois</li>
+                <li>Plus bas en région: Trois-Rivières, Sherbrooke (750-1 100 $/studio)</li>
+            </ul>
+            <p>Électricité: 55-115 $/mois pour 4½</p>
+            <h5 class="text-md font-semibold mb-1 mt-4">Téléphonie/internet</h5>
+            <ul>
+                <li>Forfait internet/télé/TV: 110-165 $/mois</li>
+                <li>Cellulaire: 40-110 $/mois</li>
+            </ul>
+            <h5 class="text-md font-semibold mb-1 mt-4">Transports</h5>
+            <ul>
+                <li>Montréal : Pass mensuel ARTM (Tous modes A) : 110 $ (tarifs applicables à partir de juillet 2026)</li>
+                <li>Billet unitaire bus/métro: 3,75 $</li>
+                <li>Hors Montréal: TC variable, usage voiture plus fréquent hors métropole.</li>
+            </ul>
+            <h5 class="text-md font-semibold mb-1 mt-4">Épicerie/alimentation</h5>
+            <p>Le panier d’épicerie et la restauration représentent une grande partie du budget. Une chose à noter, les produits importés, tels que le fromage, sont chers.</p>
+            <p>L’alcool l’est aussi, car elle est hautement taxée. En arrivant, vous pourrez constater que l'alcool ne s'achète pas à l'épicerie (excepté quelques bouteilles de vin et la bière). Pour acheter de l'alcool les québécois vont à la SAQ (Société d'Alcool du Québec), la société d'État qui a pour mandat de gérer la commercialisation des boissons alcoolisées sur tout le territoire du Québec.</p>
+            <ul>
+                <li>Panier couple moyen 500-650 $/mois</li>
+                <li>Produits importés (fromage, charcuterie, alcool) dispendieux, taxes élevées.</li>
+                <li>Alcool: SAQ seule pour spiritueux, bière/vin limité en épicerie.</li>
+            </ul>
+            <h5 class="text-md font-semibold mb-1 mt-4">Meubles/électros</h5>
+            <p>Nombre d'appartements non meublés. Plateformes locales reconnues: kijiji.ca, marketplace, kangalou.com, louer.ca, centris.ca.</p>
+            <div class="note-box">
+                <p class="font-bold">ATTENTION À NE PAS CONFONDRE LA SAQ ET LA SAAQ :</p>
+                <ul>
+                    <li>LA SAQ EST LA SOCIÉTÉ D'ALCOOL DU QUÉBEC</li>
+                    <li>LA SAAQ EST LA SOCIÉTÉ D'ASSURANCE AUTOMOBILE DU QUÉBEC</li>
+                </ul>
+            </div>
+
+            <h4 id="cout-installation-subsection" class="text-lg font-semibold mb-2 mt-6">4. Prévoir le coût de votre installation</h4>
+            <p>Il faudra peut-être prévoir des dépenses pour :</p>
+            <ul>
+                <li>L’aménagement de votre nouveau foyer</li>
+                <li>Les équipements (électroménagers, meubles, literie …)</li>
+            </ul>
+            <p>Trouver son premier logement au Québec peut être compliqué si on n’est pas sur place. Si vous n’avez pas de famille ou d’amis susceptibles de vous accueillir pour les premières semaines, une location temporaire dans un meublé, à la semaine ou au mois, s’avère pratique. Cela vous permettra de mener tranquillement vos recherches pour une location adaptée à vos besoins. Si vous n’avez pas eu la possibilité de faire un voyage de prospection, cela vous donnera le temps nécessaire pour explorer la ville et ses différents quartiers, repérer les garderies et les écoles, ainsi que les commerces, les transports en commun.</p>
+            <p class="font-bold">Au Québec, les ententes de location se font généralement au moyen d’un bail, un contrat écrit en bonne et due forme, qu’il est important que les deux parties respectent. Le bail est généralement d’un an qu’il faut respecter jusqu’à son terme.</p>
+
+            <h4 id="voyage-avion-subsection" class="text-lg font-semibold mb-2 mt-6">7. Voyage en avion</h4>
+            <p>Nous avons un partenariat avec Air Canada vous apportant un certain nombre d'avantages au départ de France. Consultez le lien <a href="https://ulysse.com/?partnerId=temporis" target="_blank" class="text-blue-600 hover:underline">https://ulysse.com/?partnerId=temporis</a>.</p>
+            <div class="flex justify-center items-center mt-4">
+                <img src="https://i.imgur.com/mUjfF3A.png" alt="Image du Logo Air Canada" class="air-canada-logo">
+            </div>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Section II: À Votre Arrivée -->
+        <section id="a-votre-arrivee-section" class="mb-8">
+            <h2 class="section-title">II. À VOTRE ARRIVÉE</h2>
+
+            <h3 id="demarches-1ers-jours-subsection" class="subsection-title">A. Les démarches des 1ers jours</h3>
+
+            <h4 id="nas-subsection" class="text-lg font-semibold mb-2">1. Le Numéro d'Assurance Sociale au Québec</h4>
+            <p>Faire une demande de numéro d’assurance sociale (NAS) est une démarche simple et gratuite, que vous devrez entreprendre immédiatement à votre arrivée au Québec. En effet, votre NAS vous est indispensable non seulement pour pouvoir travailler (chacun de vos futurs employeurs vous le demandera), mais aussi pour pouvoir recevoir certaines prestations gouvernementales et payer vos impôts. Composé de neuf chiffres, le NAS is un numéro unique et strictement confidentiel. Une fois que vous l'aurez reçu, conservez le en lieu sûr.</p>
+            <p>Pour demander votre NAS, rendez-vous dans l'un des Centres Service Canada. Visitez le site de Service Canada: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/numero-assurance-sociale/qualifier.html" target="_blank" class="text-blue-600 hover:underline">https://www.canada.ca/fr/emploi-developpement-social/services/numero-assurance-sociale/qualifier.html</a>. Vous trouverez également l'information nécessaire quant aux documents que vous devrez apporter.</p>
+
+            <h4 id="compte-bancaire-subsection" class="text-lg font-semibold mb-2 mt-6">2. L'ouverture du compte en banque</h4>
+            <p>Il est important que vous y consacriez un peu de temps afin de comprendre le système bancaire nord-américain qui diffère grandement du nôtre.</p>
+            <p>Nous pouvons vous mettre en relation avec le service Nouveaux arrivants de la Caisse Desjardins. Prenez contact avec Clara Garzon de notre part à l'adresse suivante : <a href="mailto:clara.garzon@desjardins.com" class="text-blue-600 hover:underline">clara.garzon@desjardins.com</a>. Elle prendra le temps nécessaire pour vous expliquer le fonctionnement et vous pourrez bénéficier de leur offre « nouveaux arrivants » pendant 12 mois.</p>
+            <p><strong>Conseil important :</strong> Nous conseillons aux nouveaux arrivants de conserver leur carte de crédit française jusqu'à ce qu'ils reçoivent leur carte de crédit canadienne. Vous repartirez de la banque avec une carte de débit pour les paiements et les retraits d'argent, mais celle-ci ne permet généralement pas de louer une voiture ou de faire des achats sur internet.</p>
+            <div class="flex justify-center items-center mt-4">
+                <!-- Apply the new class to the Desjardins logo -->
+                <img src="https://i.imgur.com/7FK91WX.png" alt="Image du Logo Desjardins" class="desjardins-logo">
+            </div>
+            <div class="note-box">
+                <p class="font-bold">AU HOCKEY, ON NE PARLE PAS DE PALET MAIS D’UNE RONDELLE OU ‘’PUCK’’, QUI PEUT ÊTRE UNE BOSSE SUR UNE VOITURE ÉGALEMENT.</p>
+                <p class="font-bold">ATTENTION, L’UN PEUT FACILEMENT CAUSER L’AUTRE…</p>
+            </div>
+
+            <h4 id="ramq-arrivee-subsection" class="text-lg font-semibold mb-2 mt-6">3. La RAMQ</h4>
+            <p>Au Québec, l'accès aux soins de santé est gratuit et universel. La carte d'assurance maladie (carte soleil) permet de ne débourser aucun frais pour une consultation médicale généraliste. Sont admissibles à l'assurance maladie les résidents permanents, les travailleurs temporaires possédant un permis de travail de plus de six mois, certains étudiants et la famille accompagnante.</p>
+            <p>Les personnes en PVT en sont exclues. Les personnes âgées de 14 ans et plus sont tenues d'avoir leur propre carte.</p>
+            <p>Pour toute information, consultez le site de la RAMQ: <a href="https://www.ramq.gouv.qc.ca/fr" target="_blank" class="text-blue-600 hover:underline">https://www.ramq.gouv.qc.ca/fr</a>.</p>
+            <p>Une information importante à connaître : un délai de carence de trois mois peut s'appliquer pour les nouveaux résidents au Québec. Néanmoins, certaines nationalités peuvent en être exemptées grâce à des accords de réciprocité. <span class="italic">Note pour le régime d’assurance médicaments (en 2026) : la franchise mensuelle est maintenue à 22 $, la coassurance est fixée à 30 %, et la prime annuelle maximale s’élève à 766 $.</span></p>
+
+            <h4 id="permis-conduire-arrivee-subsection" class="text-lg font-semibold mb-2 mt-6">4. Le permis de conduire</h4>
+            <p>Il est important de prendre contact avec la SAAQ dès votre arrivée. Le préposé vous donnera un rendez-vous. Le permis de conduire français est valide pour une durée de 6 mois et il est souvent très long pour obtenir un rdv (3-4 mois). Nous vous suggérons donc de vous en occuper dès votre arrivée pour ne pas vous retrouver bloqué.</p>
+            <p>Si vous avez obtenu votre permis dans des pays ayant signé des accords de réciprocité avec le Québec (comme la Belgique, la France, la Suisse), vous pourrez échanger votre permis national contre un permis québécois, normalement, sans avoir à passer les examens de compétence. Retrouvez plus d'informations ici : <a href="https://saaq.gouv.qc.ca/rendez-vous/echange-permis" target="_blank" class="text-blue-600 hover:underline">https://saaq.gouv.qc.ca/rendez-vous/echange-permis</a>.</p>
+            <p>Avant de prendre le volant, informez vous sur le code de la route et la sécurité routière.</p>
+            <p>Au Québec le permis est payant chaque année à la date de votre anniversaire. <span class="italic">En 2026, la cotisation annuelle pour un permis de classe 5 est fixée à environ 50 $ (bénéficiant d'un congé de paiement partiel de la contribution d'assurance équivalant à une remise de 75 %).</span></p>
+
+            <h4 id="consulat-arrivee-subsection" class="text-lg font-semibold mb-2 mt-6">5. S'immatriculer au consulat</h4>
+            <p>Cette formalité est généralement gratuite et non obligatoire.</p>
+            <p>Pour établir votre carte d’immatriculation consulaire, vous devrez généralement fournir les documents suivants : copie de votre acte de naissance ou livret de famille, votre carte nationale d’identité et/ou votre passeport, ainsi que votre visa, une preuve de domicile au Canada et enfin des photos d’identité.</p>
+            <p>Cette démarche vous permettra de renouveler vos documents officiels au consulat ou encore de continuer de voter pour les élections françaises etc... Pour vous inscrire en ligne au Consulat, visitez : <a href="https://montreal.consulfrance.org/S-inscrire-en-ligne-au-Consulat" target="_blank" class="text-blue-600 hover:underline">https://montreal.consulfrance.org/S-inscrire-en-ligne-au-Consulat</a>.</p>
+
+            <h4 id="ecoles-arrivee-subsection" class="text-lg font-semibold mb-2 mt-6">6. Inscription aux écoles</h4>
+            <p>L’école maternelle, primaire et secondaire (CEGEP) publique est gratuite pour tous. Des frais minimes environ 400$ s’appliquent au CEGEP (Lycée pour nous).</p>
+            <p>Si vous souhaitez laisser vos enfants dans un système scolaire français c’est possible uniquement à Montréal (Collège Stanislas ou Collège Marie de France) et à Québec (Collège Stanislas), sachez que les écoles françaises sont payantes et chères. Les garderies CPE sont subventionnées et ne coutent presque rien. Si vous n’obtenez pas de place et que vous faites garder votre enfant en garderie privée ou par une nounou, vous recevrez un crédit d’impôt établi en fonction de votre revenu. Pour trouver un centre de services scolaire par région, visitez : <a href="https://www.fcssq.quebec/centres-de-services-scolaires/recherche-par-region" target="_blank" class="text-blue-600 hover:underline">https://www.fcssq.quebec/centres-de-services-scolaires/recherche-par-region</a>.</p>
+            <p>Pour les universités et écoles supérieures, les études sont payantes.</p>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Section III: ANNEXES -->
+        <section id="annexes-section" class="mb-8">
+            <h2 class="section-title">III. ANNEXES</h2>
+            <h3 id="checklist-subsection" class="subsection-title">Checklist d'arrivée 2026</h3>
+            <table class="checklist-table">
+                <thead>
+                    <tr>
+                        <th>À faire</th>
+                        <th>Fait</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Passeport valide (vérifier la date d'expiration)</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Diplômes et certificats d'études</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Toutes attestations de formation</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Attestations d'emplois, lettres de recommandations</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Titre de propriété et/ou de ventes de vos biens immobiliers</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Permis de conduire valide</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>TOUS les documents reçus d'Immigration Canada concernant votre visa</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Votre offre d'emploi et/ou contrat de l'entreprise québécoise</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Acte de naissance, certificat de naissance, document d'adoption pour chaque membre de la famille</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Contrat de mariage, certificat de mariage, document PACS, documents de séparation ou divorce</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Livret de famille</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>AVE autorisation de voyage électronique</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Dossier médical, dossier dentaire, carnet de vaccination</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Formulaire d'assurance maladie SE 401 Q 207 OU 106 ou 102</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Justificatif d'assurance Globe PVT pour une durée de 24 mois (pour les permis Jeune Pro EIC)</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>Autorisation de sortie de territoire</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Lexique québécois</h3>
+            <ul>
+                <li>« Crisser son camp » = partir vite</li>
+                <li>« Dispendieux » = cher</li>
+                <li>« 5 à 7 » = afterwork</li>
+                <li>« Être gelé » = sous stupéfiants</li>
+                <li>« Magasiner » = faire du shopping</li>
+                <li>SAQ (alcool) SAAQ (permis/voiture)</li>
+                <li>Dire « allô! » = Bonjour !</li>
+            </ul>
+
+            <h3 class="subsection-title">Conseils finaux</h3>
+            <ul>
+                <li>Taxes: prix affichés hors taxes, ajoutez 15% en caisse.</li>
+                <li>Pourboire: minimum 15% au resto/taxi.</li>
+                <li>File d'attente: respect et calme requis partout.</li>
+                <li>Politesse: éviter la confrontation directe, privilégier le dialogue.</li>
+            </ul>
+            <p class="text-center font-semibold text-lg mt-4" style="color: var(--primary-red);">Nous vous souhaitons la bienvenue au Québec et une intégration réussie!</p>
+        </section>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Footer Section -->
+        <div id="contact" class="footer-section">
+            <img src="https://i.imgur.com/MuXNsBR.png" alt="Image du Logo Temporis Talents" class="footer-logo">
+            <p class="text-2xl font-bold mt-4" style="color: var(--primary-red);">MERCI POUR VOTRE CONFIANCE</p>
+            <div class="contact-info">
+                <p><strong>Numéro de téléphone:</strong> +1 (514)-849-5151</p>
+                <p><strong>Courriel:</strong> <a href="mailto:carriere@temporis.ca" class="hover:underline" style="color: var(--primary-red);">carriere@temporis.ca</a></p>
+                <p><strong>Adresse:</strong> 555 Chabanel Ouest - Suite 1500, Montréal, Qc, H2N 2J2</p>
+                <p class="text-sm mt-2">Ce guide, actualisé en juin 2026, s'appuie exclusivement sur les informations officielles (IRCC, MIFI, RAMQ, etc.). Vérifiez toujours les démarches auprès de ces organismes avant toute décision.</p>
+                <!-- Removed the "En savoir plus" button -->
+            </div>
+            <p class="text-xs text-gray-400 mt-4">Permis d’agence de recrutement de travailleurs étrangers temporaires - AR-2303087</p>
+            <p class="text-xs text-gray-400 mt-2">Copyright © 2026 Temporis Talents. Tous droits réservés.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20, // Adjust offset for fixed header if any, or just a little padding
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
